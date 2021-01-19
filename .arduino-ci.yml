@@ -5,3 +5,5 @@ compile:
     - leonardo
     - due
     - zero
+  libraries:
+    - "printHelpers"
