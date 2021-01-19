@@ -1,0 +1,18 @@
+# Syntax Coloring Map For CRC
+
+# Datatypes (KEYWORD1)
+
+# Methods and Functions (KEYWORD2)
+CRC8	KEYWORD2
+CRC16	KEYWORD2
+CRC16_CCITT	KEYWORD2
+CRC32	KEYWORD2
+CRC64	KEYWORD2
+
+
+# Instances (KEYWORD2)
+
+
+# Constants (LITERAL1)
+CRC_LIB_VERSION	LITERAL1
+
