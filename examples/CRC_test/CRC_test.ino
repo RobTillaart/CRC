@@ -1,5 +1,5 @@
 //
-//    FILE: CRC_reference_test.ino
+//    FILE: CRC_test.ino
 //  AUTHOR: Rob Tillaart
 // PURPOSE: demo
 //    DATE: 2020

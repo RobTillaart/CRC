@@ -5,6 +5,7 @@
 //    DATE: 2021-01-20
 //    (c) : MIT
 
+
 #include "CRC8.h"
 
 #include "CRC.h"
@@ -31,7 +32,8 @@ void loop()
 
 void test()
 {
-  Serial.println(crc8(str, 9, 0x07), HEX);
+  Serial.println(crc8((uint8_t *)str, 9, 0x07), HEX);
+
   crc.setPolynome(0x07);
   crc.add((uint8_t*)str, 9);
   Serial.println(crc.getCRC(), HEX);

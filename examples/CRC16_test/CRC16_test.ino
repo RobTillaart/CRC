@@ -29,7 +29,7 @@ void loop()
 
 void test()
 {
-  Serial.println(crc16(str, 9, 0x1021, 0,0, false, false), HEX);
+  Serial.println(crc16((uint8_t *) str, 9, 0x1021, 0, 0, false, false), HEX);
   
   crc.setPolynome(0x1021);
   crc.add((uint8_t*)str, 9);
