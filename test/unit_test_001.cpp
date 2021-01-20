@@ -1,4 +1,4 @@
-//
+  //
 //    FILE: unit_test_001.cpp
 //  AUTHOR: Rob Tillaart
 //    DATE: 2021-01-01
@@ -37,7 +37,8 @@
 #include "CRC.h"
 
 
-char data[24] = "123456789";
+char str[24] = "123456789";
+uint8_t * data = (uint8_t *) str;
 
 
 unittest_setup()
