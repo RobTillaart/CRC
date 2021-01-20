@@ -125,7 +125,7 @@ uint16_t crc16(uint8_t *array, uint8_t length, uint16_t polynome = 0x8001, uint1
 // CRC-CCITT POLYNOME = x13 + X5 + 1 =  0001 0000 0010 0001 = 0x1021
 uint16_t crc16_CCITT(uint8_t *array, uint8_t length)
 {
-  return CRC16(array, length, 0x1021, 0xFFFF);
+  return crc16(array, length, 0x1021, 0xFFFF);
 }
 
 
