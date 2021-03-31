@@ -61,7 +61,7 @@ unittest(test_crc64)
   CRC64 crc;
   crc.setPolynome(0x04C11DB704C11DB7);
   crc.add(data, 9);
-  assertEqual(14869938934466568466, crc.getCRC());
+  assertEqual(14869938934466568466ULL, crc.getCRC());
 }
 
 
