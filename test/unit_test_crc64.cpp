@@ -1,7 +1,7 @@
 //
-//    FILE: unit_test_001.cpp
+//    FILE: unit_test_crc64.cpp
 //  AUTHOR: Rob Tillaart
-//    DATE: 2021-01-01
+//    DATE: 2021-03-31
 // PURPOSE: unit tests for the CRC library
 //          https://github.com/RobTillaart/CRC
 //          https://github.com/Arduino-CI/arduino_ci/blob/master/REFERENCE.md
