@@ -53,14 +53,70 @@ unittest_teardown()
 unittest(test_crc8)
 {
   fprintf(stderr, "VERSION: %s\n", CRC_LIB_VERSION);
-  
+
   CRC8 crc:
   crc.setPolyNome(0x07);
   crc.add(data, 9);
   assertEqual(0xF4, crc.getCRC());
 
+  crc.reset();
+  crc.setPolyNome(0x39);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0x15, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0xD5);
+  crc.add(data, 9);
+  assertEqual(0xBC, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0x1D);
+  crc.setStartXOR(0xFF);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0x97, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0x1D);
+  crc.setStartXOR(0xFD);
+  crc.add(data, 9);
+  assertEqual(0x7E, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0x07);
+  crc.setStartXOR(0x00);
+  crc.setEndXOR(0x55);
+  crc.add(data, 9);
+  assertEqual(0xA1, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0x31);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0xA1, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0x07);
+  crc.setStartXOR(0xFF);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0xD0, crc.getCRC());
+
+  crc.reset();
+  crc.setPolyNome(0x9B);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0x25, crc.getCRC());
+
+
   /*
-  TODO
+  // DONE
   assertEqual(0xDA, crc8(data, 9, 0x9B, 0xFF));
   assertEqual(0x15, crc8(data, 9, 0x39, 0x00, 0x00, true, true));
   assertEqual(0xBC, crc8(data, 9, 0xD5));
