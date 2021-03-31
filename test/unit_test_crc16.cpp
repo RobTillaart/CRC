@@ -66,14 +66,75 @@ unittest(test_crc16)
   crc.setReverseOut(true);
   crc.add(data, 9);
   assertEqual(0xBB3D, crc.getCRC());
-  
-  
+
+  crc.reset();
+  crc.setPolynome(0x1021);
+  crc.setStartXOR(0x1D0F);
+  crc.setEndXOR(0x0000);
+  crc.setReverseIn(false);
+  crc.setReverseOut(false);
+  crc.add(data, 9);
+  assertEqual(0xE5CC, crc.getCRC());
+
+  crc.reset();
+  crc.setPolynome(0x8005);
+  crc.setStartXOR(0x0000);
+  crc.setEndXOR(0x0000);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0xFEE8, crc.getCRC());
+
+  crc.reset();
+  crc.setPolynome(0xC867);
+  crc.setStartXOR(0xFFFF);
+  crc.setEndXOR(0x0000);
+  crc.setReverseIn(false);
+  crc.setReverseOut(false);
+  crc.add(data, 9);
+  assertEqual(0x4C06, crc.getCRC());
+
+  crc.reset();
+  crc.setPolynome(0x8005);
+  crc.setStartXOR(0x800D);
+  crc.setEndXOR(0x0000);
+  crc.setReverseIn(false);
+  crc.setReverseOut(false);
+  crc.add(data, 9);
+  assertEqual(0x9ECF, crc.getCRC());
+
+  crc.reset();
+  crc.setPolynome(0x0589);
+  crc.setStartXOR(0x0000);
+  crc.setEndXOR(0x0001);
+  crc.setReverseIn(false);
+  crc.setReverseOut(false);
+  crc.add(data, 9);
+  assertEqual(0x007E, crc.getCRC());
+
+  crc.reset();
+  crc.setPolynome(0x0589);
+  crc.setStartXOR(0x0000);
+  crc.setEndXOR(0x0000);
+  crc.setReverseIn(false);
+  crc.setReverseOut(false);
+  crc.add(data, 9);
+  assertEqual(0x007F, crc.getCRC());
+
+  crc.reset();
+  crc.setPolynome(0x3D65);
+  crc.setStartXOR(0x0000);
+  crc.setEndXOR(0xFFFF);
+  crc.setReverseIn(true);
+  crc.setReverseOut(true);
+  crc.add(data, 9);
+  assertEqual(0xEA82, crc.getCRC());
+
+
   /*
   // DONE
   assertEqual(0x29B1, crc16(data, 9, 0x1021, 0xFFFF, 0x0000, false, false ));
   assertEqual(0xBB3D, crc16(data, 9, 0x8005, 0x0000, 0x0000, true,  true  ));
-  
-    TODO
   assertEqual(0xE5CC, crc16(data, 9, 0x1021, 0x1D0F, 0x0000, false, false ));
   assertEqual(0xFEE8, crc16(data, 9, 0x8005, 0x0000, 0x0000, false, false ));
   assertEqual(0x4C06, crc16(data, 9, 0xC867, 0xFFFF, 0x0000, false, false ));
@@ -81,6 +142,8 @@ unittest(test_crc16)
   assertEqual(0x007E, crc16(data, 9, 0x0589, 0x0000, 0x0001, false, false ));
   assertEqual(0x007F, crc16(data, 9, 0x0589, 0x0000, 0x0000, false, false ));
   assertEqual(0xEA82, crc16(data, 9, 0x3D65, 0x0000, 0xFFFF, true,  true  ));
+
+  // TODO
   assertEqual(0xC2B7, crc16(data, 9, 0x3D65, 0x0000, 0xFFFF, false, false ));
   assertEqual(0xD64E, crc16(data, 9, 0x1021, 0xFFFF, 0xFFFF, false, false ));
   assertEqual(0x44C2, crc16(data, 9, 0x8005, 0x0000, 0xFFFF, true,  true  ));
