@@ -54,7 +54,7 @@ unittest(test_crc8)
 {
   fprintf(stderr, "TEST CRC8");
 
-  CRC8 crc:
+  CRC8 crc;
   crc.setPolynome(0x07);
   crc.add(data, 9);
   assertEqual(0xF4, crc.getCRC());
