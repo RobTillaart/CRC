@@ -86,15 +86,6 @@ unittest(test_crc32)
 }
 
 
-unittest(test_crc64)
-{
-  fprintf(stderr, "VERSION: %s\n", CRC_LIB_VERSION);
-
-  fprintf(stderr, "no reference yet\n");
-  assertEqual(1, 1);
-}
-
-
 unittest_main()
 
 // --------

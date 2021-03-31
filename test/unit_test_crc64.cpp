@@ -57,10 +57,11 @@ unittest(test_crc64)
   fprintf(stderr, "no reference yet\n");
   assertEqual(1, 1);
   
+  // just a dummy test
   CRC64 crc;
-  crc.setPolynome(0x04C11DB704C11DB7);  // justr a dummy
+  crc.setPolynome(0x04C11DB704C11DB7);
   crc.add(data, 9);
-  assertEqual(0x00, crc.getCRC());
+  assertEqual(14869938934466568466, crc.getCRC());
 }
 
 
