@@ -61,7 +61,7 @@ unittest(test_crc16)
   assertEqual(0x29B1, crc.getCRC());
 
   crc.reset();
-  crc.setPolynome(0x1021);
+  crc.setPolynome(0x8005);
   crc.setReverseIn(true);
   crc.setReverseOut(true);
   crc.add(data, 9);
