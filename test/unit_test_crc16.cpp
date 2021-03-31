@@ -55,13 +55,13 @@ unittest(test_crc16)
   fprintf(stderr, "VERSION: %s\n", CRC_LIB_VERSION);
 
   CRC16 crc;
-  crc.setPolyNome(0x1021);
+  crc.setPolynome(0x1021);
   crc.setStartXOR(0xFFFF);
   crc.add(data, 9);
   assertEqual(0x29B1, crc.getCRC());
 
   crc.reset();
-  crc.setPolyNome(0x1021);
+  crc.setPolynome(0x1021);
   crc.setReverseIn(true);
   crc.setReverseOut(true);
   crc.add(data, 9);

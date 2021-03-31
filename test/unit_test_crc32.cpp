@@ -55,7 +55,7 @@ unittest(test_crc32)
   fprintf(stderr, "VERSION: %s\n", CRC_LIB_VERSION);
 
   CRC32 crc;
-  crc.setPolyNome(0x04C11DB7);
+  crc.setPolynome(0x04C11DB7);
   crc.setStartXOR(0xFFFFFFFF);
   crc.setEndXOR(0xFFFFFFFF);
   crc.setReverseIn(true);
@@ -64,7 +64,7 @@ unittest(test_crc32)
   assertEqual(0xCBF43926, crc.getCRC());
 
   crc.reset();
-  crc.setPolyNome(0x04C11DB7);
+  crc.setPolynome(0x04C11DB7);
   crc.setStartXOR(0xFFFFFFFF);
   crc.setEndXOR(0xFFFFFFFF);
   crc.add(data, 9);
