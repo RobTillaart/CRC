@@ -52,7 +52,7 @@ unittest_teardown()
 
 unittest(test_crc64)
 {
-  fprintf(stderr, "VERSION: %s\n", CRC_LIB_VERSION);
+  fprintf(stderr, "TEST CRC64");
 
   fprintf(stderr, "no reference yet\n");
   assertEqual(1, 1);
