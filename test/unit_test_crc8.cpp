@@ -52,7 +52,7 @@ unittest_teardown()
 
 unittest(test_crc8)
 {
-  fprintf(stderr, "TEST CRC8");
+  fprintf(stderr, "TEST CRC8\n");
 
   CRC8 crc;
   crc.setPolynome(0x07);

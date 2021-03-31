@@ -34,7 +34,7 @@
 
 
 #include "Arduino.h"
-#include "CRC.h"
+#include "CRC32.h"
 
 
 char str[24] = "123456789";
@@ -52,7 +52,7 @@ unittest_teardown()
 
 unittest(test_crc32)
 {
-  fprintf(stderr, "TEST CRC32");
+  fprintf(stderr, "TEST CRC32\n");
 
   CRC32 crc;
   crc.setPolynome(0x04C11DB7);

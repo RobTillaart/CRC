@@ -52,7 +52,7 @@ unittest_teardown()
 
 unittest(test_crc16)
 {
-  fprintf(stderr, "TEST CRC16");
+  fprintf(stderr, "TEST CRC16\n");
 
   CRC16 crc;
   crc.setPolynome(0x1021);
