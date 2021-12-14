@@ -43,7 +43,9 @@ uint8_t * data = (uint8_t *) str;
 
 unittest_setup()
 {
+  fprintf(stderr, "CRC_LIB_VERSION: %s\n", (char *) CRC_LIB_VERSION);
 }
+
 
 unittest_teardown()
 {
