@@ -29,12 +29,6 @@ uint8_t reverse8(uint8_t in)
 }
 
 
-uint16_t reverse12(uint16_t in)
-{
-  return reverse16(in) >> 4;
-}
-
-
 uint16_t reverse16(uint16_t in)
 {
   uint16_t x = in;
@@ -43,6 +37,12 @@ uint16_t reverse16(uint16_t in)
   x = (((x & 0xF0F0) >> 4) | ((x & 0X0F0F) << 4));
   x = (( x >> 8) | (x << 8));
   return x;
+}
+
+
+uint16_t reverse12(uint16_t in)
+{
+  return reverse16(in) >> 4;
 }
 
 
