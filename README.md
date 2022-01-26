@@ -39,7 +39,7 @@ and many other websites.
 
 ## Interface CRC classes
 
-These interfaces are very similar for CRC8, CRC16, CRC32 and CRC64 class.
+These interfaces are very similar for CRC8, CRC12, CRC16, CRC32 and CRC64 class.
 The only difference is the data type for polynome, start- and end-mask, 
 and the returned CRC.
 
@@ -121,7 +121,9 @@ See examples.
 - stream version - 4 classes class?
 - setCRC(value) to be able to pick up where one left ?
 - getters, getPolynome() etc?
-- 
+- add(array, length) calls yield per byte that is quite a lot.
+  - ignore flag
+  - timing once per millisecond?
 
 
 #### Exotic CRC's ?
