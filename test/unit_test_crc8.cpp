@@ -56,7 +56,7 @@ unittest(test_crc8_getters)
 {
   fprintf(stderr, "TEST CRC8 GETTERS\n");
 
-  CRC16 crc;
+  CRC8 crc;
   crc.setPolynome(0x07);
   crc.setStartXOR(0x55);
   crc.setEndXOR(0xAA);

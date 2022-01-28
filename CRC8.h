@@ -28,7 +28,7 @@ public:
   void     setReverseOut(bool reverseOut) { _reverseOut = reverseOut; };
 
   // get parameters
-  uint8_t  getPolyNome()   { return _polynome; };
+  uint8_t  getPolynome()   { return _polynome; };
   uint8_t  getStartXOR()   { return _startMask; };
   uint8_t  getEndXOR()     { return _endMask; };
   bool     getReverseIn()  { return _reverseIn; };
