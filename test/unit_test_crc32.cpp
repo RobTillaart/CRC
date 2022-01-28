@@ -49,6 +49,7 @@ unittest_teardown()
 {
 }
 
+
 unittest(test_crc32_getters)
 {
   fprintf(stderr, "TEST CRC32 GETTERS\n");
@@ -79,7 +80,6 @@ unittest(test_crc32_getters)
   assertFalse(crc.getReverseIn());
   assertFalse(crc.getReverseOut());
 }
-
 
 
 unittest(test_crc32)

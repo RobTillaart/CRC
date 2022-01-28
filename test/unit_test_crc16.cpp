@@ -68,6 +68,7 @@ unittest(test_crc16_getters)
   assertFalse(crc.getReverseOut());
 }
 
+
 unittest(test_crc16)
 {
   fprintf(stderr, "TEST CRC16\n");

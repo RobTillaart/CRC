@@ -51,7 +51,6 @@ unittest_teardown()
 }
 
 
-
 unittest(test_crc8_getters)
 {
   fprintf(stderr, "TEST CRC8 GETTERS\n");
