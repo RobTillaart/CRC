@@ -47,7 +47,7 @@ void CRC64::add(const uint8_t * array, uint8_t length)
   _count += length;
   while (length--)
   {
-    // yield once per 255 bytes
+    // reduce yield() calls
     if ((_count & 0xFF) == 0xFF) yield();
     _update(*array++);
   }
