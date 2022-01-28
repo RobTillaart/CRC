@@ -50,6 +50,27 @@ unittest_teardown()
 }
 
 
+
+unittest(test_crc64_getters)
+{
+  fprintf(stderr, "TEST CRC64 GETTERS\n");
+
+  CRC16 crc;
+  crc.setPolynome(0x04C11DB704C11DB7);
+  crc.setStartXOR(0xCE5CA2AD34A16112);
+  crc.setEndXOR(0x2AD34A16112CE5CA);
+  crc.setReverseIn(false);
+  crc.setReverseOut(false);
+  
+  assertEqual(0x04C11DB704C11DB7, crc.setPolynome());
+  assertEqual(0xCE5CA2AD34A16112, crc.setStartXOR());
+  assertEqual(0x2AD34A16112CE5CA, crc.setEndXOR());
+  assertFalse(crc.setReverseIn());
+  assertFalse(crc.setReverseOut());
+}
+
+
+
 unittest(test_crc64)
 {
   fprintf(stderr, "TEST CRC64\n");

@@ -50,6 +50,24 @@ unittest_teardown()
 }
 
 
+unittest(test_crc16_getters)
+{
+  fprintf(stderr, "TEST CRC16 GETTERS\n");
+
+  CRC16 crc;
+  crc.setPolynome(0x1021);
+  crc.setStartXOR(0x1D0F);
+  crc.setEndXOR(0x8007);
+  crc.setReverseIn(true);
+  crc.setReverseOut(false);
+  
+  assertEqual(0x1021, crc.setPolynome());
+  assertEqual(0x1D0F, crc.setStartXOR());
+  assertEqual(0x8007, crc.setEndXOR());
+  assertTrue(crc.setReverseIn());
+  assertFalse(crc.setReverseOut());
+}
+
 unittest(test_crc16)
 {
   fprintf(stderr, "TEST CRC16\n");
