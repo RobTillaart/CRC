@@ -61,11 +61,11 @@ unittest(test_crc16_getters)
   crc.setReverseIn(true);
   crc.setReverseOut(false);
   
-  assertEqual(0x1021, crc.setPolynome());
-  assertEqual(0x1D0F, crc.setStartXOR());
-  assertEqual(0x8007, crc.setEndXOR());
-  assertTrue(crc.setReverseIn());
-  assertFalse(crc.setReverseOut());
+  assertEqual(0x1021, crc.getPolynome());
+  assertEqual(0x1D0F, crc.getStartXOR());
+  assertEqual(0x8007, crc.getEndXOR());
+  assertTrue(crc.getReverseIn());
+  assertFalse(crc.getReverseOut());
 }
 
 unittest(test_crc16)

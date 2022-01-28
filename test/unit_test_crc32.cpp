@@ -60,11 +60,11 @@ unittest(test_crc32_getters)
   crc.setReverseIn(true);
   crc.setReverseOut(true);
   
-  assertEqual(0x04C11DB7, crc.setPolynome());
-  assertEqual(0xFFFFFFFF, crc.setStartXOR());
-  assertEqual(0xFFFFFFFF, crc.setEndXOR());
-  assertTrue(crc.setReverseIn());
-  assertTrue(crc.setReverseOut());
+  assertEqual(0x04C11DB7, crc.getPolynome());
+  assertEqual(0xFFFFFFFF, crc.getStartXOR());
+  assertEqual(0xFFFFFFFF, crc.getEndXOR());
+  assertTrue(crc.getReverseIn());
+  assertTrue(crc.getReverseOut());
 
   crc.reset();
   crc.setPolynome(0x1EDC6F41);
@@ -73,11 +73,11 @@ unittest(test_crc32_getters)
   crc.setReverseIn(false);
   crc.setReverseOut(false);
 
-  assertEqual(0x1EDC6F41, crc.setPolynome());
-  assertEqual(0x00000000, crc.setStartXOR());
-  assertEqual(0x00000000, crc.setEndXOR());
-  assertFalse(crc.setReverseIn());
-  assertFalse(crc.setReverseOut());
+  assertEqual(0x1EDC6F41, crc.getPolynome());
+  assertEqual(0x00000000, crc.getStartXOR());
+  assertEqual(0x00000000, crc.getEndXOR());
+  assertFalse(crc.getReverseIn());
+  assertFalse(crc.getReverseOut());
 }
 
 
