@@ -8,8 +8,9 @@
 #include "CRC16.h"
 
 
-CRC16::CRC16()
+CRC16::CRC16(bool canYield)
 {
+  _canYield = canYield;
   reset();
 }
 
@@ -38,7 +39,7 @@ void CRC16::restart()
 void CRC16::add(uint8_t value)
 {
   _count++;
-  if ((_count & 0xFF) == 0) yield();
+  if (_canYield && ((_count & 0xFF) == 0)) yield();
   _update(value);
 }
 

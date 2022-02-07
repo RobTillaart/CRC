@@ -48,7 +48,8 @@ and the returned CRC.
 
 Use **\#include "CRC8.h"**
 
-- **CRC8()** Constructor.
+- **CRC8(bool yield = true)** Constructor. Sets calls to yield to true, 
+can be overruled to disable the yield calls.
 - **void reset()** set all internals to constructor defaults.
 - **void restart()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.

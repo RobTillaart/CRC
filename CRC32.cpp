@@ -8,8 +8,9 @@
 #include "CRC32.h"
 
 
-CRC32::CRC32()
+CRC32::CRC32(bool canYield)
 {
+  _canYield = canYield;
   reset();
 }
 
@@ -38,7 +39,7 @@ void CRC32::restart()
 void CRC32::add(uint8_t value)
 {
   _count++;
-  if ((_count & 0xFF) == 0) yield();
+  if (_canYield && ((_count & 0xFF) == 0)) yield();
   _update(value);
 }
 
