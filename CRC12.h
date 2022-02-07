@@ -41,6 +41,10 @@ public:
   uint16_t getCRC();  // returns CRC
   uint32_t count()    { return _count; };
 
+  // POWER USER ONLY
+  void     enableYield()  { _canYield = true; };
+  void     disableYield() { _canYield = false; };
+
 private:
   uint16_t _reverse(uint16_t value);
   uint8_t  _reverse8(uint8_t value);
