@@ -5,7 +5,7 @@
 // PURPOSE: defines for standard CRC polynomes
 //     URL: https://github.com/RobTillaart/CRC
 //
-// Polynomes from 
+// Polynomes from
 //          https://en.wikipedia.org/wiki/Cyclic_redundancy_check#Polynomial_representations_of_cyclic_redundancy_checks
 
 

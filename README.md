@@ -155,7 +155,9 @@ See examples.
 - **CRC1()** // parity :)
 - **CRC4(array, length, polynome, start, end, reverseIn, reverseOut)** nibbles?
   - default polynome 0x03
-
+- One CRC() with #bits as parameter?
+  - up to 64 bit for all missing ones.?
+  - performance penalty
 
 #### Won't
 
