@@ -8,7 +8,7 @@
 
 #include "Arduino.h"
 
-#define CRC16_DEFAULT_POLYNOME      0x1021
+#include "CRC_polynomes.h"
 
 
 class CRC16

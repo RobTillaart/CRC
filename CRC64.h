@@ -8,7 +8,8 @@
 
 #include "Arduino.h"
 
-#define CRC64_DEFAULT_POLYNOME      0x814141AB
+#include "CRC_polynomes.h"
+
 
 
 class CRC64

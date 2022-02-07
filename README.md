@@ -53,8 +53,8 @@ Use **\#include "CRC8.h"**
 - **void restart()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.
 - **void add(value)** add a single value to CRC calculation.
-- **void add(array, uint32_t length)** add an array of values to the CRC. 
-In case of a warning/error use casting to (uint8_t \*).
+- **void add(array, uint16_t length)** add an array of values to the CRC. 
+In case of a warning/error for the array type, use casting to (uint8_t \*).
 - **uint8_t getCRC()** returns CRC calculated so far. This allows to check the CRC of 
 a really large stream at intermediate moments, e.g. to link multiple packets.
 - **uint32_t count()** returns number of values added so far. Default 0.
@@ -155,12 +155,6 @@ See examples.
 - **CRC1()** // parity :)
 - **CRC4(array, length, polynome, start, end, reverseIn, reverseOut)** nibbles?
   - default polynome 0x03
-
-
-#### Magic \#defines for "common" polynomes? verify ?
-
-  - \#define CRC_ISO64  0x000000000000001B
-  - \#define CRC_ECMA64 0x42F0E1EBA9EA3693
 
 
 #### Won't

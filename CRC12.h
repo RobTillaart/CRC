@@ -9,7 +9,7 @@
 
 #include "Arduino.h"
 
-#define CRC12_DEFAULT_POLYNOME      0x080D
+#include "CRC_polynomes.h"
 
 
 class CRC12

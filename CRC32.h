@@ -8,7 +8,7 @@
 
 #include "Arduino.h"
 
-#define CRC32_DEFAULT_POLYNOME      0x04C11DB7
+#include "CRC_polynomes.h"
 
 
 class CRC32

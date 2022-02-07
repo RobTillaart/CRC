@@ -10,6 +10,7 @@
 
 #include "Arduino.h"
 
+#include "CRC_polynomes.h"
 
 #define CRC_LIB_VERSION       (F("0.2.1"))
 

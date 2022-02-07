@@ -10,6 +10,7 @@
 - static functions
   - increased length from uint8_t => uint16_t
   - added conditional yield().
+- added CRC_polynomes.h
 
 
 ## 0.2.0
