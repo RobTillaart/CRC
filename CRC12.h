@@ -15,7 +15,7 @@
 class CRC12
 {
 public:
-  CRC12(bool canYield = true);
+  CRC12();
 
   // set parameters to default
   void     reset();       // set all to constructor defaults

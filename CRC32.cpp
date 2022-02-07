@@ -8,9 +8,8 @@
 #include "CRC32.h"
 
 
-CRC32::CRC32(bool canYield)
+CRC32::CRC32()
 {
-  _canYield = canYield;
   reset();
 }
 
@@ -25,6 +24,7 @@ void CRC32::reset()
   _reverseOut = false;
   _started    = false;
   _count      = 0;
+  _canYield   = true;
 }
 
 

@@ -8,9 +8,8 @@
 #include "CRC8.h"
 
 
-CRC8::CRC8(bool canYield)
+CRC8::CRC8()
 {
-  _canYield = canYield;
   reset();
 }
 

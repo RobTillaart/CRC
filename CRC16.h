@@ -14,7 +14,7 @@
 class CRC16
 {
 public:
-  CRC16(bool canYield = true);
+  CRC16();
 
   // set parameters to default
   void     reset();       // set all to constructor defaults

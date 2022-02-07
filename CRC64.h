@@ -15,7 +15,7 @@
 class CRC64
 {
 public:
-  CRC64(bool canYield = true);
+  CRC64();
 
   // set parameters to default
   void     reset();       // set all to constructor defaults

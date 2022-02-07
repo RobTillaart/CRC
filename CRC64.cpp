@@ -8,9 +8,8 @@
 #include "CRC64.h"
 
 
-CRC64::CRC64(bool canYield)
+CRC64::CRC64()
 {
-  _canYield = canYield;
   reset();
 }
 
@@ -25,6 +24,7 @@ void CRC64::reset()
   _reverseOut = false;
   _started    = false;
   _count      = 0;
+  _canYield   = true;
 }
 
 

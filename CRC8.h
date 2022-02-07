@@ -14,7 +14,7 @@
 class CRC8
 {
 public:
-  CRC8(bool canYield = true);
+  CRC8();
 
   // set parameters to default
   void     reset();       // set all to constructor defaults

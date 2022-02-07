@@ -14,7 +14,7 @@
 class CRC32
 {
 public:
-  CRC32(bool canYield = true);
+  CRC32();
 
   // set parameters to default
   void     reset();       // set all to constructor defaults

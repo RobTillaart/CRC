@@ -8,9 +8,8 @@
 #include "CRC12.h"
 
 
-CRC12::CRC12(bool canYield)
+CRC12::CRC12()
 {
-  _canYield = canYield;
   reset();
 }
 
@@ -25,6 +24,7 @@ void CRC12::reset()
   _reverseOut = false;
   _started    = false;
   _count      = 0;
+  _canYield   = true;
 }
 
 
