@@ -11,12 +11,12 @@
 
 // CRC 4
 #define CRC4_DEFAULT_POLYNOME       0x03
-#define CRC4-ITU                    0x03
+#define CRC4_ITU                    0x03
 
 
 // CRC 8
 #define CRC8_DEFAULT_POLYNOME       0x07
-#define CRC8_DVB-S2                 0xD5
+#define CRC8_DVB_S2                 0xD5
 #define CRC8_AUTOSAR                0x2F
 #define CRC8_BLUETOOTH              0xA7
 #define CRC8_CCITT                  0x07
