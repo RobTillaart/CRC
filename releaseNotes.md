@@ -4,7 +4,7 @@
 
 ## 0.2.2
 
-- fix #19
+- fix #19 enable/disable yield call
 
 
 ## 0.2.1
