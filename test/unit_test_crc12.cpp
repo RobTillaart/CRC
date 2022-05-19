@@ -88,7 +88,7 @@ unittest(test_crc12)
 
 }
 
-unittest(test_crc12)
+unittest(test_crc12_param)
 {
   fprintf(stderr, "TEST CRC12\n");
 
