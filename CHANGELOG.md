@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - update GitHub actions
 - update license
 - renamed releaseNotes.md to CHANGELOG.md (in line with other libs)
+- update readme.md
 
 
 ## [0.3.2] - 2022-10-30
