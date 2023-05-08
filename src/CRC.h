@@ -78,11 +78,11 @@ uint16_t yieldCrc12(
 
 uint16_t yieldCrc16(
     const uint8_t *array, size_t length,
-    const uint16_t polynome = CRC16_POLYNOME,
-    const uint16_t initial  = CRC16_INITIAL,
-    const uint16_t xorOut   = CRC16_XOR_OUT,
-    const bool reverseIn    = CRC16_REF_IN,
-    const bool reverseOut   = CRC16_REF_OUT,
+    const uint16_t polynome  = CRC16_POLYNOME,
+    const uint16_t initial   = CRC16_INITIAL,
+    const uint16_t xorOut    = CRC16_XOR_OUT,
+    const bool reverseIn     = CRC16_REF_IN,
+    const bool reverseOut    = CRC16_REF_OUT,
     const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
 
 uint32_t yieldCrc32(
