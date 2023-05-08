@@ -48,14 +48,14 @@ void test()
   Serial.println();
   delay(100);
 
-  CRC32 notReversedCrc(CRC32_POLYNOME, CRC32_INITIAL, CRC32_XOR_OUT, false, false);
+  CRC32 nonReversedCrc(CRC32_POLYNOME, CRC32_INITIAL, CRC32_XOR_OUT, false, false);
   start = micros();
-  notReversedCrc.add((uint8_t*)str, length);
+  nonReversedCrc.add((uint8_t*)str, length);
   stop = micros();
   Serial.print("DATA: \t");
   Serial.println(length);
   Serial.print(" CRC:\t");
-  Serial.println(notReversedCrc.getCRC(), HEX);
+  Serial.println(nonReversedCrc.getCRC(), HEX);
   Serial.print("TIME: \t");
   Serial.println(stop - start);
   delay(100);
