@@ -140,7 +140,7 @@ See examples.
 - http://zorc.breitbandkatze.de/crc.html - online CRC calculator (any base up to 64 is supported.)
 - https://crccalc.com/ - online CRC calculator to verify.
 - https://www.lddgo.net/en/encrypt/crc - online CRC calculator
-
+- http://www.sunshine2k.de/coding/javascript/crc/crc_js.html - online CRC calculator
 
 ## Future
 
