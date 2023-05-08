@@ -30,11 +30,9 @@
 // assertNotNAN(arg);                              // !isnan(a)
 
 
-#include <ArduinoUnitTests.h>
-
-
-#include "Arduino.h"
 #include "CRC.h"
+#include <ArduinoUnitTests.h>
+#include <Arduino.h>
 
 
 char str[24] = "123456789";
@@ -116,5 +114,3 @@ unittest(test_crc64)
 
 
 unittest_main()
-
-// --------
