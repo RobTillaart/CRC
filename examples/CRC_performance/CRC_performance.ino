@@ -1,12 +1,3 @@
-//
-//    FILE: CRC_performance.ino
-//  AUTHOR: Rob Tillaart
-// PURPOSE: demo
-//    DATE: 2020
-//    (c) : MIT
-//
-
-
 #include "CRC.h"
 
 char str[122] =  "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
@@ -46,7 +37,7 @@ void setup()
 
 
   start = micros();
-  uint16_t x16 = crc16(data, len, 0x1021, 0xFFFF, 0x0000, false, false );
+  uint16_t x16 = crc16(data, len, 0x1021, 0xFFFF, 0x0000, false, false);
   stop = micros();
   Serial.print("CRC16:\t");
   Serial.println(x16, HEX);
@@ -55,7 +46,7 @@ void setup()
   delay(100);
 
   start = micros();
-  x16 = crc16(data, len, 0x1021, 0xFFFF, 0x0000, true, true );
+  x16 = crc16(data, len, 0x1021, 0xFFFF, 0x0000, true, true);
   stop = micros();
   Serial.print("CRC16:\t");
   Serial.println(x16, HEX);

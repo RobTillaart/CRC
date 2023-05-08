@@ -1,66 +1,33 @@
 #pragma once
-//
-//    FILE: CRC32.h
-//  AUTHOR: Rob Tillaart
-// PURPOSE: Arduino class for CRC32
-//     URL: https://github.com/RobTillaart/CRC
-
-
-#include "Arduino.h"
-
-#include "CRC_polynomes.h"
-
+#include "CrcFastReverse.h"
+#include "CrcParameters.h"
+#include <Arduino.h>
 
 class CRC32
 {
 public:
-  CRC32();
-  CRC32(uint32_t polynome, uint32_t XORstart, uint32_t XORend, bool reverseIn, bool reverseOut);
+  CRC32(const uint32_t polynome = CRC32_POLYNOME,
+        const uint32_t initial  = CRC32_INITIAL,
+        const uint32_t xorOut   = CRC32_XOR_OUT,
+        const bool reverseIn    = CRC32_REF_IN,
+        const bool reverseOut   = CRC32_REF_OUT);
 
-  // set parameters to default
-  void     reset();       // set all to constructor defaults
-  void     restart();     // reset crc with same parameters.
-
-  // set parameters
-  void     setPolynome(uint32_t polynome) { _polynome = polynome; };
-  void     setStartXOR(uint32_t start)    { _startMask = start; };
-  void     setEndXOR(uint32_t end)        { _endMask = end; };
-  void     setReverseIn(bool reverseIn)   { _reverseIn = reverseIn; };
-  void     setReverseOut(bool reverseOut) { _reverseOut = reverseOut; };
-
-  // get parameters
-  uint32_t getPolynome()   { return _polynome; };
-  uint32_t getStartXOR()   { return _startMask; };
-  uint32_t getEndXOR()     { return _endMask; };
-  bool     getReverseIn()  { return _reverseIn; };
-  bool     getReverseOut() { return _reverseOut; };
+  void reset();
   
-  void     add(uint8_t value);
-  void     add(const uint8_t * array, uint16_t length);
+  void add(uint8_t value);
+  void add(const uint8_t * array, size_t length);
+  void yieldAdd(uint8_t value);
+  void yieldAdd(const uint8_t * array, size_t length);
 
-  uint32_t getCRC();       // returns CRC
-  uint32_t count()         { return _count; };
-
-  // POWER USER ONLY
-  void     enableYield()   { _canYield = true; };
-  void     disableYield()  { _canYield = false; };
+  uint32_t getCRC() const;
+  size_t count() const;
 
 private:
-  uint32_t _reverse(uint32_t value);
-  uint8_t  _reverse8(uint8_t value);
-  void     _update(uint8_t value);
-
-  uint32_t _polynome;
-  uint32_t _startMask;
-  uint32_t _endMask;
+  const uint32_t _polynome;
+  const uint32_t _initial;
+  const uint32_t _xorOut;
+  const bool _reverseIn;
+  const bool _reverseOut;
   uint32_t _crc;
-  bool     _reverseIn;
-  bool     _reverseOut;
-  bool     _started;
-  bool     _canYield;
-  uint32_t _count;
+  size_t _count;
 };
-
-
-// -- END OF FILE --
-

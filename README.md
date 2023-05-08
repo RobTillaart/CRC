@@ -159,9 +159,9 @@ Reverse12 is based upon reverse16, with a final shift.
 Other reverses can be created in similar way.
 
 
-## CRC_polynomes.h
+## CrcParameters.h
 
-Since version 0.2.1 the file CRC_polynomes.h is added to hold symbolic names for certain polynomes.
+Since version 0.2.1 the file CrcParameters.h is added to hold symbolic names for certain polynomes.
 These can be used in your code too to minimize the number of "magic HEX codes".
 If standard polynomes are missing, please open an issue and report, with reference.
 

@@ -1,84 +1,30 @@
-//
-//    FILE: CRC8.cpp
-//  AUTHOR: Rob Tillaart
-// PURPOSE: Arduino class for CRC8;
-//     URL: https://github.com/RobTillaart/CRC
-
-
 #include "CRC8.h"
 
-
-CRC8::CRC8()
-{
-  reset();
-}
-
-
-CRC8::CRC8(uint8_t polynome, uint8_t XORstart, uint8_t XORend, bool reverseIn, bool reverseOut)
-{
-  _polynome   = polynome;
-  _startMask  = XORstart;
-  _endMask    = XORend;
-  _reverseIn  = reverseIn;
-  _reverseOut = reverseOut;
-  _crc        = 0;
-  _started    = false;
-  _count      = 0;
-  _canYield   = true;
-}
-
+CRC8::CRC8(const uint8_t polynome,
+           const uint8_t initial,
+           const uint8_t xorOut,
+           const bool reverseIn,
+           const bool reverseOut) :
+  _polynome(polynome),
+  _initial(initial),
+  _xorOut(xorOut),
+  _reverseIn(reverseIn),
+  _reverseOut(reverseOut),
+  _crc(initial),
+  _count(0u)
+{}
 
 void CRC8::reset()
 {
-  _polynome   = CRC8_POLYNOME;
-  _startMask  = 0;
-  _endMask    = 0;
-  _crc        = 0;
-  _reverseIn  = false;
-  _reverseOut = false;
-  _started    = false;
-  _count      = 0;
+  _crc = _initial;
+  _count = 0u;
 }
-
-
-void CRC8::restart()
-{
-  _started = true;
-  _crc     = _startMask;
-  _count   = 0;
-}
-
 
 void CRC8::add(uint8_t value)
 {
   _count++;
-  if (_canYield && ((_count & 0xFF) == 0)) yield();
-  _update(value);
-}
 
-
-void CRC8::add(const uint8_t * array, uint16_t length)
-{
-  while (length--)
-  {
-    add(*array++);
-  }
-}
-
-
-uint8_t CRC8::getCRC()
-{
-  uint8_t rv = _crc;
-  if (_reverseOut) rv = _reverse(rv);
-  rv ^= _endMask;
-  return rv;
-}
-
-
-void CRC8::_update(uint8_t value)
-{
-  if (!_started) restart();
-  if (_reverseIn) value = _reverse(value);
+  if (_reverseIn) value = reverse8(value);
   _crc ^= value;
   for (uint8_t i = 8; i; i--) 
   {
@@ -94,16 +40,37 @@ void CRC8::_update(uint8_t value)
   }
 }
 
-
-uint8_t CRC8::_reverse(uint8_t in)
+void CRC8::add(const uint8_t * array, size_t length)
 {
-  uint8_t x = in;
-  x = (((x & 0xAA) >> 1) | ((x & 0x55) << 1));
-  x = (((x & 0xCC) >> 2) | ((x & 0x33) << 2));
-  x =          ((x >> 4) | (x << 4));
-  return x;
+  while (length--)
+  {
+    add(*array++);
+  }
 }
 
+void CRC8::yieldAdd(uint8_t value)
+{
+  add(value);
+  if ((_count & 0xFF) == 0) yield();
+}
 
-// -- END OF FILE --
+void CRC8::yieldAdd(const uint8_t * array, size_t length)
+{
+  while (length--)
+  {
+    yieldAdd(*array++);
+  }
+}
 
+uint8_t CRC8::getCRC() const
+{
+  uint8_t rv = _crc;
+  if (_reverseOut) rv = reverse8(rv);
+  rv ^= _xorOut;
+  return rv;
+}
+
+size_t CRC8::count() const
+{
+  return _count;
+}

@@ -1,11 +1,3 @@
-//
-//    FILE: CRC16_test.ino
-//  AUTHOR: Rob Tillaart
-// PURPOSE: demo
-//    DATE: 2021-01-20
-//    (c) : MIT
-
-
 #include "CRC16.h"
 #include "CRC.h"
 
@@ -32,28 +24,12 @@ void loop()
 
 void test()
 {
-  Serial.println(crc16((uint8_t *) str, 9, 0x1021, 0, 0, false, false), HEX);
+  Serial.println(crc16((uint8_t *) str, 9), HEX);
   
-  crc.setPolynome(0x1021);
   crc.add((uint8_t*)str, 9);
   Serial.println(crc.getCRC(), HEX);
 
   crc.reset();
-  crc.setPolynome(0x1021);
-  for (int i = 0; i < 9; i++)
-  {
-    crc.add(str[i]);
-    Serial.print(i);
-    Serial.print("\t");
-    Serial.println(crc.getCRC(), HEX);
-  }
-
-  crc.restart();
-  for (int i = 0; i < 9; i++)
-  {
-    crc.add(str[i]);
-  }
-  Serial.println(crc.getCRC(), HEX);
   for (int i = 0; i < 9; i++)
   {
     crc.add(str[i]);
@@ -61,7 +37,3 @@ void test()
   Serial.println(crc.getCRC(), HEX);
   Serial.println(crc.count());
 }
-
-
-// -- END OF FILE --
-

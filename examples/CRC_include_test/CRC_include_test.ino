@@ -1,8 +1,3 @@
-//    FILE: CRC_include_test.ino
-//  AUTHOR: Rob Tillaart
-// PURPOSE: test namespaces
-//     URL: https://github.com/RobTillaart/CRC
-
 #include "Arduino.h"
 #include "foo.h"
 #include "CRC.h"
