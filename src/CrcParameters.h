@@ -291,11 +291,19 @@
 
 // CRC 64
 #define CRC64_ECMA64_POLYNOME       0x42F0E1EBA9EA3693 // x64 + ..... + 1
+#define CRC64_ECMA64_INITIAL        0x0000000000000000
+#define CRC64_ECMA64_XOR_OUT        0x0000000000000000
+#define CRC64_ECMA64_REF_IN         false
+#define CRC64_ECMA64_REF_OUT        false
 
 #define CRC64_POLYNOME              CRC64_ECMA64_POLYNOME
-#define CRC64_INITIAL               0x0000000000000000
-#define CRC64_XOR_OUT               0x0000000000000000
-#define CRC64_REF_IN                false
-#define CRC64_REF_OUT               false
+#define CRC64_INITIAL               CRC64_ECMA64_INITIAL
+#define CRC64_XOR_OUT               CRC64_ECMA64_XOR_OUT
+#define CRC64_REF_IN                CRC64_ECMA64_REF_IN
+#define CRC64_REF_OUT               CRC64_ECMA64_REF_OUT
 
 #define CRC64_ISO64_POLYNOME        0x000000000000001B
+#define CRC64_ECMA64_INITIAL        0xFFFFFFFFFFFFFFFF
+#define CRC64_ECMA64_XOR_OUT        0xFFFFFFFFFFFFFFFF
+#define CRC64_ECMA64_REF_IN         true
+#define CRC64_ECMA64_REF_OUT        true
