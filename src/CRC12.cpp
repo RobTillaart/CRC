@@ -20,6 +20,19 @@ void CRC12::reset()
   _count = 0u;
 }
 
+uint16_t CRC12::getCRC() const
+{
+  uint16_t rv = _crc;
+  if (_reverseOut) rv = reverse12(rv);
+  rv ^= _xorOut;
+  return rv;
+}
+
+size_t CRC12::count() const
+{
+  return _count;
+}
+
 void CRC12::add(uint8_t value)
 {
   _count++;
@@ -48,29 +61,11 @@ void CRC12::add(const uint8_t * array, size_t length)
   }
 }
 
-void CRC12::yieldAdd(uint8_t value)
-{
-  add(value);
-  if ((_count & 0xFF) == 0) yield();
-}
-
-void CRC12::yieldAdd(const uint8_t * array, size_t length)
+void CRC12::yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod)
 {
   while (length--)
   {
-    yieldAdd(*array++);
+    add(*array++);
+    if ((_count % yieldPeriod) == 0) yield();
   }
-}
-
-uint16_t CRC12::getCRC() const
-{
-  uint16_t rv = _crc;
-  if (_reverseOut) rv = reverse12(rv);
-  rv ^= _xorOut;
-  return rv;
-}
-
-size_t CRC12::count() const
-{
-  return _count;
 }

@@ -20,6 +20,19 @@ void CRC8::reset()
   _count = 0u;
 }
 
+uint8_t CRC8::getCRC() const
+{
+  uint8_t rv = _crc;
+  if (_reverseOut) rv = reverse8(rv);
+  rv ^= _xorOut;
+  return rv;
+}
+
+size_t CRC8::count() const
+{
+  return _count;
+}
+
 void CRC8::add(uint8_t value)
 {
   _count++;
@@ -48,29 +61,11 @@ void CRC8::add(const uint8_t * array, size_t length)
   }
 }
 
-void CRC8::yieldAdd(uint8_t value)
-{
-  add(value);
-  if ((_count & 0xFF) == 0) yield();
-}
-
-void CRC8::yieldAdd(const uint8_t * array, size_t length)
+void CRC8::yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod)
 {
   while (length--)
   {
-    yieldAdd(*array++);
+    add(*array++);
+    if ((_count % yieldPeriod) == 0) yield();
   }
-}
-
-uint8_t CRC8::getCRC() const
-{
-  uint8_t rv = _crc;
-  if (_reverseOut) rv = reverse8(rv);
-  rv ^= _xorOut;
-  return rv;
-}
-
-size_t CRC8::count() const
-{
-  return _count;
 }

@@ -13,14 +13,11 @@ public:
         const bool reverseOut   = CRC16_REF_OUT);
 
   void reset();
-  
-  void add(uint8_t value);
-  void add(const uint8_t * array, size_t length);
-  void yieldAdd(uint8_t value);
-  void yieldAdd(const uint8_t * array, size_t length);
-
   uint16_t getCRC() const;
   size_t count() const;
+  void add(uint8_t value);
+  void add(const uint8_t * array, size_t length);
+  void yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
 
 private:
   const uint16_t _polynome;

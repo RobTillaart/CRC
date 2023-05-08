@@ -47,28 +47,28 @@ uint64_t crc64(const uint8_t *array, size_t length,
 
 uint8_t yieldCrc8(const uint8_t *array, size_t length,
                   const uint8_t polynome, const uint8_t initial, const uint8_t xorOut,
-                  const bool reverseIn, const bool reverseOut)
+                  const bool reverseIn, const bool reverseOut, const size_t yieldPeriod)
 {
   CRC8 crc(polynome, initial, xorOut, reverseIn, reverseOut);
-  crc.yieldAdd(array, length);
+  crc.yieldAdd(array, length, yieldPeriod);
   return crc.getCRC();
 }
 
 uint16_t yieldCrc12(const uint8_t *array, size_t length,
                     const uint16_t polynome, const uint16_t initial, const uint16_t xorOut,
-                    const bool reverseIn, const bool reverseOut)
+                    const bool reverseIn, const bool reverseOut, const size_t yieldPeriod)
 {
   CRC12 crc(polynome, initial, xorOut, reverseIn, reverseOut);
-  crc.yieldAdd(array, length);
+  crc.yieldAdd(array, length, yieldPeriod);
   return crc.getCRC();
 }
 
 uint16_t yieldCrc16(const uint8_t *array, size_t length,
                     const uint16_t polynome, const uint16_t initial, const uint16_t xorOut,
-                    const bool reverseIn, const bool reverseOut)
+                    const bool reverseIn, const bool reverseOut, const size_t yieldPeriod)
 {
   CRC16 crc(polynome, initial, xorOut, reverseIn, reverseOut);
-  crc.yieldAdd(array, length);
+  crc.yieldAdd(array, length, yieldPeriod);
   return crc.getCRC();
 }
 
@@ -76,16 +76,16 @@ uint32_t yieldCrc32(const uint8_t *array, size_t length,
                     const uint32_t polynome, const uint32_t initial, const uint32_t xorOut,
                     const bool reverseIn, const bool reverseOut, const size_t yieldPeriod)
 {
-  YieldCRC32 crc(polynome, initial, xorOut, reverseIn, reverseOut, yieldPeriod);
-  crc.add(array, length);
+  CRC32 crc(polynome, initial, xorOut, reverseIn, reverseOut);
+  crc.yieldAdd(array, length, yieldPeriod);
   return crc.getCRC();
 }
 
 uint64_t yieldCrc64(const uint8_t *array, size_t length,
                     const uint64_t polynome, const uint64_t initial, const uint64_t xorOut,
-                    const bool reverseIn, const bool reverseOut)
+                    const bool reverseIn, const bool reverseOut, const size_t yieldPeriod)
 {
   CRC64 crc(polynome, initial, xorOut, reverseIn, reverseOut);
-  crc.yieldAdd(array, length);
+  crc.yieldAdd(array, length, yieldPeriod);
   return crc.getCRC();
 }
