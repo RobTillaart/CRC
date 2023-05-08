@@ -74,10 +74,10 @@ uint16_t yieldCrc16(const uint8_t *array, size_t length,
 
 uint32_t yieldCrc32(const uint8_t *array, size_t length,
                     const uint32_t polynome, const uint32_t initial, const uint32_t xorOut,
-                    const bool reverseIn, const bool reverseOut)
+                    const bool reverseIn, const bool reverseOut, const size_t yieldPeriod)
 {
-  CRC32 crc(polynome, initial, xorOut, reverseIn, reverseOut);
-  crc.yieldAdd(array, length);
+  YieldCRC32 crc(polynome, initial, xorOut, reverseIn, reverseOut, yieldPeriod);
+  crc.add(array, length);
   return crc.getCRC();
 }
 

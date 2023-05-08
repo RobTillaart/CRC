@@ -48,20 +48,6 @@ void CRC32::add(const uint8_t * array, size_t length)
   }
 }
 
-void CRC32::yieldAdd(uint8_t value)
-{
-  add(value);
-  if ((_count & 0xFF) == 0) yield();
-}
-
-void CRC32::yieldAdd(const uint8_t * array, size_t length)
-{
-  while (length--)
-  {
-    yieldAdd(*array++);
-  }
-}
-
 uint32_t CRC32::getCRC() const
 {
   uint32_t rv = _crc;
@@ -73,4 +59,43 @@ uint32_t CRC32::getCRC() const
 size_t CRC32::count() const
 {
   return _count;
+}
+
+YieldCRC32::YieldCRC32(const uint32_t polynome,
+                       const uint32_t initial,
+                       const uint32_t xorOut,
+                       const bool reverseIn,
+                       const bool reverseOut,
+                       const size_t yieldPeriod) :
+  _crc(polynome, initial, xorOut, reverseIn, reverseOut),
+  _yieldPeriod(yieldPeriod)
+{}
+
+void YieldCRC32::reset()
+{
+  _crc.reset();
+}
+
+void YieldCRC32::add(uint8_t value)
+{
+  _crc.add(value);
+  if ((_crc.count() % _yieldPeriod) == 0) yield();
+}
+
+void YieldCRC32::add(const uint8_t * array, size_t length)
+{
+  while (length--)
+  {
+    add(*array++);
+  }
+}
+
+uint32_t YieldCRC32::getCRC() const
+{
+  return _crc.getCRC();
+}
+
+size_t YieldCRC32::count() const
+{
+  return _crc.count();
 }

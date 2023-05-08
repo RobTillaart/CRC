@@ -2,6 +2,8 @@
 // Polynomes from
 //          https://en.wikipedia.org/wiki/Cyclic_redundancy_check#Polynomial_representations_of_cyclic_redundancy_checks
 
+#define DEFAULT_YIELD_PERIOD 255
+
 
 // CRC 4
 #define CRC4_POLYNOME               0x03
