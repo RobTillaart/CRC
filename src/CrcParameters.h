@@ -108,13 +108,146 @@
 #define CRC16_REF_IN                false
 #define CRC16_REF_OUT               false
 
+#define CRC16_CCITT_POLYNOME        0x1021 // x13 + X5 + 1 =  0001 0000 0010 0001 = 0x1021
+#define CRC16_CCITT_INITIAL         0x0000
+#define CRC16_CCITT_XOR_OUT         0x0000
+#define CRC16_CCITT_REF_IN          false
+#define CRC16_CCITT_REF_OUT         false
+
+#define CRC16_ARC_POLYNOME          0x8005
+#define CRC16_ARC_INITIAL           0x0000
+#define CRC16_ARC_XOR_OUT           0x0000
+#define CRC16_ARC_REF_IN            true
+#define CRC16_ARC_REF_OUT           true
+
+#define CRC16_AUG_CCITT_POLYNOME    0x1021
+#define CRC16_AUG_CCITT_INITIAL     0x1D0F
+#define CRC16_AUG_CCITT_XOR_OUT     0x0000
+#define CRC16_AUG_CCITT_REF_IN      false
+#define CRC16_AUG_CCITT_REF_OUT     false
+
+#define CRC16_BUYPASS_POLYNOME      0x8005
+#define CRC16_BUYPASS_INITIAL       0x0000
+#define CRC16_BUYPASS_XOR_OUT       0x0000
+#define CRC16_BUYPASS_REF_IN        false
+#define CRC16_BUYPASS_REF_OUT       false
+
+#define CRC16_CCITT_FALSE_POLYNOME  0x1021
+#define CRC16_CCITT_FALSE_INITIAL   0xFFFF
+#define CRC16_CCITT_FALSE_XOR_OUT   0x0000
+#define CRC16_CCITT_FALSE_REF_IN    false
+#define CRC16_CCITT_FALSE_REF_OUT   false
+
+#define CRC16_CDMA2000_POLYNOME     0xC867
+#define CRC16_CDMA2000_INITIAL      0xFFFF
+#define CRC16_CDMA2000_XOR_OUT      0x0000
+#define CRC16_CDMA2000_REF_IN       false
+#define CRC16_CDMA2000_REF_OUT      false
+
+#define CRC16_DDS_110_POLYNOME      0x8005
+#define CRC16_DDS_110_INITIAL       0x800D
+#define CRC16_DDS_110_XOR_OUT       0x0000
+#define CRC16_DDS_110_REF_IN        false
+#define CRC16_DDS_110_REF_OUT       false
+
+#define CRC16_DECT_R_POLYNOME       0x0589
+#define CRC16_DECT_R_INITIAL        0x0000
+#define CRC16_DECT_R_XOR_OUT        0x0001
+#define CRC16_DECT_R_REF_IN         false
+#define CRC16_DECT_R_REF_OUT        false
+
+#define CRC16_DECT_X_POLYNOME       0x0589
+#define CRC16_DECT_X_INITIAL        0x0000
+#define CRC16_DECT_X_XOR_OUT        0x0000
+#define CRC16_DECT_X_REF_IN         false
+#define CRC16_DECT_X_REF_OUT        false
+
+#define CRC16_DNP_POLYNOME          0x3D65
+#define CRC16_DNP_INITIAL           0x0000
+#define CRC16_DNP_XOR_OUT           0xFFFF
+#define CRC16_DNP_REF_IN            true
+#define CRC16_DNP_REF_OUT           true
+
+#define CRC16_GENIBUS_POLYNOME      0x1021
+#define CRC16_GENIBUS_INITIAL       0xFFFF
+#define CRC16_GENIBUS_XOR_OUT       0xFFFF
+#define CRC16_GENIBUS_REF_IN        false
+#define CRC16_GENIBUS_REF_OUT       false
+
+#define CRC16_MAXIM_POLYNOME        0x8005
+#define CRC16_MAXIM_INITIAL         0x0000
+#define CRC16_MAXIM_XOR_OUT         0xFFFF
+#define CRC16_MAXIM_REF_IN          true
+#define CRC16_MAXIM_REF_OUT         true
+
+#define CRC16_MCRF4XX_POLYNOME      0x1021
+#define CRC16_MCRF4XX_INITIAL       0xFFFF
+#define CRC16_MCRF4XX_XOR_OUT       0x0000
+#define CRC16_MCRF4XX_REF_IN        true
+#define CRC16_MCRF4XX_REF_OUT       true
+
+#define CRC16_RIELLO_POLYNOME       0x1021
+#define CRC16_RIELLO_INITIAL        0xB2AA
+#define CRC16_RIELLO_XOR_OUT        0x0000
+#define CRC16_RIELLO_REF_IN         true
+#define CRC16_RIELLO_REF_OUT        true
+
+#define CRC16_T10_DIF_POLYNOME      0x8BB7
+#define CRC16_T10_DIF_INITIAL       0x0000
+#define CRC16_T10_DIF_XOR_OUT       0x0000
+#define CRC16_T10_DIF_REF_IN        false
+#define CRC16_T10_DIF_REF_OUT       false
+
+#define CRC16_TELEDISK_POLYNOME     0xA097
+#define CRC16_TELEDISK_INITIAL      0x0000
+#define CRC16_TELEDISK_XOR_OUT      0x0000
+#define CRC16_TELEDISK_REF_IN       false
+#define CRC16_TELEDISK_REF_OUT      false
+
+#define CRC16_TMS37157_POLYNOME     0x1021
+#define CRC16_TMS37157_INITIAL      0x89EC
+#define CRC16_TMS37157_XOR_OUT      0x0000
+#define CRC16_TMS37157_REF_IN       true
+#define CRC16_TMS37157_REF_OUT      true
+
+#define CRC16_USB_POLYNOME          0x8005
+#define CRC16_USB_INITIAL           0xFFFF
+#define CRC16_USB_XOR_OUT           0xFFFF
+#define CRC16_USB_REF_IN            true
+#define CRC16_USB_REF_OUT           true
+
+#define CRC16_A_POLYNOME            0x1021
+#define CRC16_A_INITIAL             0xC6C6
+#define CRC16_A_XOR_OUT             0x0000
+#define CRC16_A_REF_IN              true
+#define CRC16_A_REF_OUT             true
+
+#define CRC16_KERMIT_POLYNOME       0x1021
+#define CRC16_KERMIT_INITIAL        0x0000
+#define CRC16_KERMIT_XOR_OUT        0x0000
+#define CRC16_KERMIT_REF_IN         true
+#define CRC16_KERMIT_REF_OUT        true
+
+#define CRC16_MODBUS_POLYNOME       0x8005
+#define CRC16_MODBUS_INITIAL        0xFFFF
+#define CRC16_MODBUS_XOR_OUT        0x0000
+#define CRC16_MODBUS_REF_IN         true
+#define CRC16_MODBUS_REF_OUT        true
+
+#define CRC16_X_25_POLYNOME         0x1021
+#define CRC16_X_25_INITIAL          0xFFFF
+#define CRC16_X_25_XOR_OUT          0xFFFF
+#define CRC16_X_25_REF_IN           true
+#define CRC16_X_25_REF_OUT          true
+
+#define CRC16_XMODEM_POLYNOME       0x1021
+#define CRC16_XMODEM_INITIAL        0x0000
+#define CRC16_XMODEM_XOR_OUT        0x0000
+#define CRC16_XMODEM_REF_IN         false
+#define CRC16_XMODEM_REF_OUT        false
+
 #define CRC16_CHAKRAVARTY_POLYNOME  0x2F15
 #define CRC16_ARINC_POLYNOME        0xA02B
-#define CRC16_CCITT_POLYNOME        0x1021 // x13 + X5 + 1 =  0001 0000 0010 0001 = 0x1021
-#define CRC16_CDMA2000_POLYNOME     0xC867
-#define CRC16_DECT_POLYNOME         0x0589
-#define CRC16_T10_DIF_POLYNOME      0x8BB7
-#define CRC16_DNP_POLYNOME          0x3D65
 #define CRC16_IBM_POLYNOME          0x8005
 #define CRC16_OPENSAFETY_A_POLYNOME 0x5935
 #define CRC16_OPENSAFETY_B_POLYNOME 0x755B
