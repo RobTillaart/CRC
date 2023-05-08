@@ -262,10 +262,31 @@
 #define CRC32_REF_OUT               true
 
 #define CRC32_ISO3309_POLYNOME      0x04C11DB7
+#define CRC32_ISO3309_INITIAL       0xFFFFFFFF
+#define CRC32_ISO3309_XOR_OUT       0xFFFFFFFF
+#define CRC32_ISO3309_REF_IN        false
+#define CRC32_ISO3309_REF_OUT       false
+
 #define CRC32_CASTAGNOLI_POLYNOME   0x1EDC6F41
+#define CRC32_CASTAGNOLI_INITIAL    0xFFFFFFFF
+#define CRC32_CASTAGNOLI_XOR_OUT    0xFFFFFFFF
+#define CRC32_CASTAGNOLI_REF_IN     true
+#define CRC32_CASTAGNOLI_REF_OUT    true
+
+#define CRC32_D_POLYNOME            0xA833982B
+#define CRC32_D_INITIAL             0xFFFFFFFF
+#define CRC32_D_XOR_OUT             0xFFFFFFFF
+#define CRC32_D_REF_IN              true
+#define CRC32_D_REF_OUT             true
+
+#define CRC32_Q_POLYNOME            0x814141AB
+#define CRC32_Q_INITIAL             0x00000000
+#define CRC32_Q_XOR_OUT             0x00000000
+#define CRC32_Q_REF_IN              false
+#define CRC32_Q_REF_OUT             false
+
 #define CRC32_KOOPMAN_POLYNOME      0x741B8CD7
 #define CRC32_KOOPMAN_2_POLYNOME    0x32583499
-#define CRC32_Q_POLYNOME            0x814141AB
 
 
 // CRC 64
