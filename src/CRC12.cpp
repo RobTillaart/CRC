@@ -30,7 +30,7 @@ CRC12::CRC12(uint16_t polynome, uint16_t XORstart, uint16_t XORend, bool reverse
 
 void CRC12::reset()
 {
-  _polynome   = CRC12_DEFAULT_POLYNOME;
+  _polynome   = CRC12_POLYNOME;
   _startMask  = 0;
   _endMask    = 0;
   _crc        = 0;

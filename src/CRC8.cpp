@@ -30,7 +30,7 @@ CRC8::CRC8(uint8_t polynome, uint8_t XORstart, uint8_t XORend, bool reverseIn, b
 
 void CRC8::reset()
 {
-  _polynome   = CRC8_DEFAULT_POLYNOME;
+  _polynome   = CRC8_POLYNOME;
   _startMask  = 0;
   _endMask    = 0;
   _crc        = 0;

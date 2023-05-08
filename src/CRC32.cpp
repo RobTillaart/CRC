@@ -30,7 +30,7 @@ CRC32::CRC32(uint32_t polynome, uint32_t XORstart, uint32_t XORend, bool reverse
 
 void CRC32::reset()
 {
-  _polynome   = CRC32_DEFAULT_POLYNOME;
+  _polynome   = CRC32_POLYNOME;
   _startMask  = 0;
   _endMask    = 0;
   _crc        = 0;

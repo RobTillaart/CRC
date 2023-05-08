@@ -30,7 +30,7 @@ CRC64::CRC64(uint64_t polynome, uint64_t XORstart, uint64_t XORend, bool reverse
 
 void CRC64::reset()
 {
-  _polynome   = CRC64_DEFAULT_POLYNOME;
+  _polynome   = CRC64_POLYNOME;
   _startMask  = 0;
   _endMask    = 0;
   _crc        = 0;
