@@ -17,15 +17,76 @@
 #define CRC8_REF_IN                 false
 #define CRC8_REF_OUT                false
 
+#define CRC8_SAEJ1850_POLYNOME      0x1D
+#define CRC8_SAEJ1850_INITIAL       0xFF
+#define CRC8_SAEJ1850_XOR_OUT       0xFF
+#define CRC8_SAEJ1850_REF_IN        false
+#define CRC8_SAEJ1850_REF_OUT       false
+
+#define CRC8_SAEJ1850_ZERO_POLYNOME 0x1D
+#define CRC8_SAEJ1850_ZERO_INITIAL  0x00
+#define CRC8_SAEJ1850_ZERO_XOR_OUT  0x00
+#define CRC8_SAEJ1850_ZERO_REF_IN   false
+#define CRC8_SAEJ1850_ZERO_REF_OUT  false
+
+#define CRC8_8H2F_POLYNOME          0x2F
+#define CRC8_8H2F_INITIAL           0xFF
+#define CRC8_8H2F_XOR_OUT           0xFF
+#define CRC8_8H2F_REF_IN            false
+#define CRC8_8H2F_REF_OUT           false
+
+#define CRC8_WCDMA_POLYNOME         0x9B
+#define CRC8_WCDMA_INITIAL          0xFF
+#define CRC8_WCDMA_XOR_OUT          0x00
+#define CRC8_WCDMA_REF_IN           false
+#define CRC8_WCDMA_REF_OUT          false
+
+#define CRC8_DARC_POLYNOME          0x39
+#define CRC8_DARC_INITIAL           0x00
+#define CRC8_DARC_XOR_OUT           0x00
+#define CRC8_DARC_REF_IN            true
+#define CRC8_DARC_REF_OUT           true
+
 #define CRC8_DVB_S2_POLYNOME        0xD5
+#define CRC8_DVB_S2_INITIAL         0x00
+#define CRC8_DVB_S2_XOR_OUT         0x00
+#define CRC8_DVB_S2_REF_IN          false
+#define CRC8_DVB_S2_REF_OUT         false
+
+#define CRC8_EBU_POLYNOME           0x1D
+#define CRC8_EBU_INITIAL            0xFF
+#define CRC8_EBU_XOR_OUT            0x00
+#define CRC8_EBU_REF_IN             true
+#define CRC8_EBU_REF_OUT            true
+
+#define CRC8_ICODE_POLYNOME         0x1D
+#define CRC8_ICODE_INITIAL          0xFD
+#define CRC8_ICODE_XOR_OUT          0x00
+#define CRC8_ICODE_REF_IN           false
+#define CRC8_ICODE_REF_OUT          false
+
+#define CRC8_ITU_POLYNOME           0x07
+#define CRC8_ITU_INITIAL            0x00
+#define CRC8_ITU_XOR_OUT            0x55
+#define CRC8_ITU_REF_IN             false
+#define CRC8_ITU_REF_OUT            false
+
+#define CRC8_DALLAS_MAXIM_POLYNOME  0x31 // oneWire
+#define CRC8_DALLAS_MAXIM_INITIAL   0x00
+#define CRC8_DALLAS_MAXIM_XOR_OUT   0x00
+#define CRC8_DALLAS_MAXIM_REF_IN    true
+#define CRC8_DALLAS_MAXIM_REF_OUT   true
+
+#define CRC8_ROHC_POLYNOME          0x07
+#define CRC8_ROHC_INITIAL           0xFF
+#define CRC8_ROHC_XOR_OUT           0x00
+#define CRC8_ROHC_REF_IN            true
+#define CRC8_ROHC_REF_OUT           true
+
 #define CRC8_AUTOSAR_POLYNOME       0x2F
 #define CRC8_BLUETOOTH_POLYNOME     0xA7
 #define CRC8_CCITT_POLYNOME         0x07
-#define CRC8_DALLAS_MAXIM_POLYNOME  0x31 // oneWire
-#define CRC8_DARC_POLYNOME          0x39
 #define CRC8_GSM_B_POLYNOME         0x49
-#define CRC8_SAEJ1850_POLYNOME      0x1D
-#define CRC8_WCDMA_POLYNOME         0x9B
 
 
 // CRC 12
