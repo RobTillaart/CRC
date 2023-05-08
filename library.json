@@ -1,6 +1,6 @@
 {
   "name": "CRC",
-  "keywords": "CRC8,CRC12,CRC16,CRC16-CCITT,CRC32,CRC64",
+  "keywords": "CRC8,CRC12,CRC16,CRC32,CRC64",
   "description": "Library for CRC for Arduino.",
   "authors":
   [
