@@ -57,35 +57,18 @@ and the returned CRC.
 
 Use **\#include "CRC8.h"**
 
-- **CRC8()** default - parameterless - constructor.
 - **CRC8(polynome, initial, xorOut, reverseIn, reverseOut)** Constructor to set all parameters at once.
 - **void reset()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.
-- **void add(value)** add a single value to CRC calculation.
-- **void add(array, length)** add an array of values to the CRC.
-In case of a warning/error for the array type, use casting to (uint8_t \*).
 - **uint8_t getCRC()** returns CRC calculated so far. This allows to check the CRC of
 a really large stream at intermediate moments, e.g. to link multiple packets.
 - **size_t count()** returns number of values added so far. Default 0.
-
-
-#### Power users only
-
-As CRC calculations of large blocks can take serious time (in milliseconds),
-the classes call **yield()** after every 256 **add()** calls to keep RTOS
-environments happy.
-
-The following two calls allows to add values with
-**yield()** to get optimal performance. The risk is missing context switching
-to handle interrupts etc. So use at own risk.
-
-- **void yieldAdd(value)**.
-- **void yieldAdd(array, length)**.
-
-The static functions **yieldCrc..()** in this library also support yield.
-
-_Note: a parameter could be a future option to set the number of adds before
-**yield()** is called. **0** would be disable it._
+- **void add(value)** add a single value to CRC calculation.
+- **void add(array, length)** add an array of values to the CRC.
+In case of a warning/error for the array type, use casting to (uint8_t \*).
+- **void yieldAdd(array, length, yieldPeriod)** as CRC calculations of large blocks can take serious time (in milliseconds),
+the classes call **yield()** after every **yieldPeriod** calls to keep RTOS environments happy. The call allows to add values with
+**yield()** to get optimal performance. The risk is missing context switching to handle interrupts etc. So use at own risk.
 
 
 ### Example snippet
@@ -123,9 +106,8 @@ For flexibility both parameters are kept available.
 - **uint32_t crc32(array, length)** idem with default polynome.
 - **uint64_t crc64(array, length)** - experimental version, no reference found except on Wikipedia.
 
-Note these functions are limited to one call per block of data.
-These functions will call **yield()** every 256 bytes to keep RTOS happy.
-For more flexibility use the specific classes.
+
+The static functions **yieldCrc..()** in this library also support yield.
 
 The static CRC functions use fast reverse functions that can be also be
 used outside CRC context. Their usage is straightforward.
@@ -142,7 +124,7 @@ Other reverses can be created in similar way.
 
 ## CrcParameters.h
 
-Since version 0.2.1 the file CrcParameters.h is added to hold symbolic names for certain polynomes.
+Since version 0.3.3 the file CrcParameters.h is added to hold symbolic names for certain parameters (polynomes, etc..).
 These can be used in your code too to minimize the number of "magic HEX codes".
 If standard polynomes are missing, please open an issue and report, with reference.
 
@@ -186,7 +168,7 @@ See examples.
 #### Exotic CRC's ?
 
 - **CRC1()** // parity :)
-- **CRC4(array, length, polynome, start, end, reverseIn, reverseOut)** nibbles?
+- **CRC4()** nibbles?
   - default polynome 0x03  ITU
 - One CRC() with #bits as parameter?
   - up to 64 bit for all missing ones?
