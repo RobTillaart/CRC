@@ -13,31 +13,14 @@ CRC64	KEYWORD1
 crc8	KEYWORD2
 crc12	KEYWORD2
 crc16	KEYWORD2
-crc16_CCITT	KEYWORD2
 crc32	KEYWORD2
 crc64	KEYWORD2
 
 reset	KEYWORD2
-restart	KEYWORD2
-
-setPolynome	KEYWORD2
-setStartXOR	KEYWORD2
-setEndXOR	KEYWORD2
-setReverseIn	KEYWORD2
-setReverseOut	KEYWORD2
-
-getPolynome	KEYWORD2
-getStartXOR	KEYWORD2
-getEndXOR	KEYWORD2
-getReverseIn	KEYWORD2
-getReverseOut	KEYWORD2
 
 add	KEYWORD2
 getCRC	KEYWORD2
 count	KEYWORD2
-
-enableYield	KEYWORD2
-disableYield	KEYWORD2
 
 
 # Instances (KEYWORD2)

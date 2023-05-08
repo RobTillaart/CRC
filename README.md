@@ -58,32 +58,15 @@ and the returned CRC.
 Use **\#include "CRC8.h"**
 
 - **CRC8()** default - parameterless - constructor.
-- **CRC8(polynome, XORstart, XORend, reverseIn, reverseOut)** Constructor to set all parameters at once.
-- **void reset()** set all internals to defaults of the **CRC8()** parameterless constructor.
-- **void restart()** reset internal CRC and count only;
+- **CRC8(polynome, initial, xorOut, reverseIn, reverseOut)** Constructor to set all parameters at once.
+- **void reset()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.
 - **void add(value)** add a single value to CRC calculation.
-- **void add(array, uint16_t length)** add an array of values to the CRC.
+- **void add(array, length)** add an array of values to the CRC.
 In case of a warning/error for the array type, use casting to (uint8_t \*).
 - **uint8_t getCRC()** returns CRC calculated so far. This allows to check the CRC of
 a really large stream at intermediate moments, e.g. to link multiple packets.
-- **uint32_t count()** returns number of values added so far. Default 0.
-
-
-#### Parameters
-
-The parameters do not have defaults so the user must set them explicitly.
-
-- **void setPolynome(polynome)** set polynome, note reset sets a default polynome.
-- **void setStartXOR(start)** set start-mask, default 0.
-- **void setEndXOR(end)** set end-mask, default 0.
-- **void setReverseIn(bool reverseIn)** reverse the bit pattern of input data (MSB vs LSB).
-- **void setReverseOut(bool reverseOut)** reverse the bit pattern of CRC (MSB vs LSB).
-- **uint8_t getPolyNome()** return parameter set above or default.
-- **uint8_t getStartXOR()** return parameter set above or default.
-- **uint8_t getEndXOR()** return parameter set above or default.
-- **bool getReverseIn()** return parameter set above or default.
-- **bool getReverseOut()** return parameter set above or default.
+- **size_t count()** returns number of values added so far. Default 0.
 
 
 #### Power users only
@@ -92,18 +75,17 @@ As CRC calculations of large blocks can take serious time (in milliseconds),
 the classes call **yield()** after every 256 **add()** calls to keep RTOS
 environments happy.
 
-The following two calls allows one to enable and disable these calls to
+The following two calls allows to add values with
 **yield()** to get optimal performance. The risk is missing context switching
 to handle interrupts etc. So use at own risk.
 
-- **void enableYield()** enables the calls to **yield()**.
-- **void disableYield()** disables the calls to **yield()**.
+- **void yieldAdd(value)**.
+- **void yieldAdd(array, length)**.
 
-_Note: the static functions in this library also call **yield()** but this
-cannot be disabled (for now)._
+The static functions **yieldCrc..()** in this library also support yield.
 
 _Note: a parameter could be a future option to set the number of adds before
-**yield()** is called. **setYield(0)** would be disable it._
+**yield()** is called. **0** would be disable it._
 
 
 ### Example snippet
@@ -135,12 +117,11 @@ However these parameters allow one to tweak the CRC in all aspects known.
 In all the examples encountered the reverse flags were set both to false or both to true.
 For flexibility both parameters are kept available.
 
-- **uint8_t crc8(array, length, polynome = 0xD5, start = 0, end = 0, reverseIn = false, reverseOut = false)** idem with default polynome.
-- **uint16_t crc12(array, length, polynome = 0x080D, start = 0, end = 0, reverseIn = false, reverseOut = false)** idem with default polynome.
-- **uint16_t crc16(array, length, polynome = 0x8001, start = 0, end = 0, reverseIn = false, reverseOut = false)** idem with default polynome.
-- **uint16_t crc16-CCITT(array, length)** fixed polynome **0x1021**, non zero start / end masks.
-- **uint32_t crc32(array, length, polynome = 0x04C11DB7, start = 0, end = 0, reverseIn = false, reverseOut = false)** idem with default polynome.
-- **uint64_t crc64(array, length, polynome = 0x42F0E1EBA9EA3693, start = 0, end = 0, reverseIn = false, reverseOut = false)** - experimental version, no reference found except on Wikipedia.
+- **uint8_t crc8(array, length)** idem with default polynome.
+- **uint16_t crc12(array, length)** idem with default polynome.
+- **uint16_t crc16(array, length)** idem with default polynome.
+- **uint32_t crc32(array, length)** idem with default polynome.
+- **uint64_t crc64(array, length)** - experimental version, no reference found except on Wikipedia.
 
 Note these functions are limited to one call per block of data.
 These functions will call **yield()** every 256 bytes to keep RTOS happy.
