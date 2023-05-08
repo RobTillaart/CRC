@@ -1,4 +1,5 @@
 #include "CRC32.h"
+#include "CrcFastReverse.h"
 
 CRC32::CRC32(const uint32_t polynome,
              const uint32_t initial,
@@ -23,7 +24,7 @@ void CRC32::reset()
 uint32_t CRC32::getCRC() const
 {
   uint32_t rv = _crc;
-  if (_reverseOut) rv = reverse32(rv);
+  if (_reverseOut) rv = reverse32bits(rv);
   rv ^= _xorOut;
   return rv;
 }
@@ -37,7 +38,7 @@ void CRC32::add(uint8_t value)
 {
   _count++;
 
-  if (_reverseIn) value = reverse8(value);
+  if (_reverseIn) value = reverse8bits(value);
   _crc ^= ((uint32_t)value) << 24;
   for (uint8_t i = 8; i; i--) 
   {

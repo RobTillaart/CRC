@@ -1,4 +1,5 @@
 #include "CRC64.h"
+#include "CrcFastReverse.h"
 
 CRC64::CRC64(const uint64_t polynome,
              const uint64_t initial,
@@ -23,7 +24,7 @@ void CRC64::reset()
 uint64_t CRC64::getCRC() const
 {
   uint64_t rv = _crc;
-  if (_reverseOut) rv = reverse64(rv);
+  if (_reverseOut) rv = reverse64bits(rv);
   rv ^= _xorOut;
   return rv;
 }
@@ -37,7 +38,7 @@ void CRC64::add(uint8_t value)
 {
   _count++;
 
-  if (_reverseIn) value = reverse8(value);
+  if (_reverseIn) value = reverse8bits(value);
   _crc ^= ((uint64_t)value) << 56;
   for (uint8_t i = 8; i; i--) 
   {

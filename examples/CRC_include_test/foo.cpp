@@ -5,5 +5,5 @@
 
 int foo(int n)
 {
-  return reverse8(n);
+  return reverse8bits(n);
 }

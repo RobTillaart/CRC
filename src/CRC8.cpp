@@ -1,4 +1,5 @@
 #include "CRC8.h"
+#include "CrcFastReverse.h"
 
 CRC8::CRC8(const uint8_t polynome,
            const uint8_t initial,
@@ -23,7 +24,7 @@ void CRC8::reset()
 uint8_t CRC8::getCRC() const
 {
   uint8_t rv = _crc;
-  if (_reverseOut) rv = reverse8(rv);
+  if (_reverseOut) rv = reverse8bits(rv);
   rv ^= _xorOut;
   return rv;
 }
@@ -37,7 +38,7 @@ void CRC8::add(uint8_t value)
 {
   _count++;
 
-  if (_reverseIn) value = reverse8(value);
+  if (_reverseIn) value = reverse8bits(value);
   _crc ^= value;
   for (uint8_t i = 8; i; i--) 
   {

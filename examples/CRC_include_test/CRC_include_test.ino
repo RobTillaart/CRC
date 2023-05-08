@@ -9,7 +9,7 @@ void setup()
   while(!Serial);
   Serial.println(__FILE__);
 
-  int x = reverse8(0xAA);
+  int x = reverse8bits(0xAA);
   Serial.println(x, HEX);
   Serial.println(millis());
   

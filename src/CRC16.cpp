@@ -1,4 +1,5 @@
 #include "CRC16.h"
+#include "CrcFastReverse.h"
 
 CRC16::CRC16(const uint16_t polynome,
              const uint16_t initial,
@@ -23,7 +24,7 @@ void CRC16::reset()
 uint16_t CRC16::getCRC() const
 {
   uint16_t rv = _crc;
-  if (_reverseOut) rv = reverse16(rv);
+  if (_reverseOut) rv = reverse16bits(rv);
   rv ^= _xorOut;
   return rv;
 }
@@ -37,7 +38,7 @@ void CRC16::add(uint8_t value)
 {
   _count++;
 
-  if (_reverseIn) value = reverse8(value);
+  if (_reverseIn) value = reverse8bits(value);
   _crc ^= ((uint16_t)value) << 8;
   for (uint8_t i = 8; i; i--) 
   {

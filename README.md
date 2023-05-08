@@ -130,13 +130,13 @@ For more flexibility use the specific classes.
 The static CRC functions use fast reverse functions that can be also be
 used outside CRC context. Their usage is straightforward.
 
-- **uint8_t reverse8(uint8_t in)** idem.
-- **uint16_t reverse16(uint16_t in)** idem.
-- **uint16_t reverse12(uint16_t in)** idem.
-- **uint32_t reverse32(uint32_t in)** idem.
-- **uint64_t reverse64(uint64_t in)** idem.
+- **uint8_t reverse8bits(uint8_t in)** idem.
+- **uint16_t reverse16bits(uint16_t in)** idem.
+- **uint16_t reverse12bits(uint16_t in)** idem.
+- **uint32_t reverse32bits(uint32_t in)** idem.
+- **uint64_t reverse64bits(uint64_t in)** idem.
 
-Reverse12 is based upon reverse16, with a final shift.
+reverse12bits is based upon reverse16bits, with a final shift.
 Other reverses can be created in similar way.
 
 

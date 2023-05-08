@@ -1,6 +1,6 @@
 #include "CrcFastReverse.h"
 
-uint8_t reverse8(uint8_t in)
+uint8_t reverse8bits(uint8_t in)
 {
   uint8_t x = in;
   x = (((x & 0xAA) >> 1) | ((x & 0x55) << 1));
@@ -9,7 +9,7 @@ uint8_t reverse8(uint8_t in)
   return x;
 }
 
-uint16_t reverse16(uint16_t in)
+uint16_t reverse16bits(uint16_t in)
 {
   uint16_t x = in;
   x = (((x & 0XAAAA) >> 1) | ((x & 0X5555) << 1));
@@ -19,12 +19,12 @@ uint16_t reverse16(uint16_t in)
   return x;
 }
 
-uint16_t reverse12(uint16_t in)
+uint16_t reverse12bits(uint16_t in)
 {
-  return reverse16(in) >> 4;
+  return reverse16bits(in) >> 4;
 }
 
-uint32_t reverse32(uint32_t in)
+uint32_t reverse32bits(uint32_t in)
 {
   uint32_t x = in;
   x = (((x & 0xAAAAAAAA) >> 1)  | ((x & 0x55555555) << 1));
@@ -35,7 +35,7 @@ uint32_t reverse32(uint32_t in)
   return x;
 }
 
-uint64_t reverse64(uint64_t in)
+uint64_t reverse64bits(uint64_t in)
 {
   uint64_t x = in;
   x = (((x & 0xAAAAAAAAAAAAAAAA) >> 1)  | ((x & 0x5555555555555555) << 1));

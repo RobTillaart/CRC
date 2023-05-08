@@ -1,5 +1,4 @@
 #pragma once
-#include "CrcFastReverse.h"
 #include "CrcParameters.h"
 #include <Arduino.h>
 
