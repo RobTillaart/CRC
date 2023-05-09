@@ -43,7 +43,7 @@ void test()
     customCrc.add(str[i]);
   }
   Serial.println(print64(customCrc.getCRC(), HEX));
-  Serial.println(print64(customCrc.count()));
+  Serial.println(customCrc.count());
 }
 
 
