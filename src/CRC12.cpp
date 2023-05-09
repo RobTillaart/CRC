@@ -26,7 +26,7 @@ uint16_t CRC12::getCRC() const
   uint16_t rv = _crc;
   if (_reverseOut) rv = reverse12bits(rv);
   rv ^= _xorOut;
-  return rv;
+  return rv & 0x0FFF;
 }
 
 size_t CRC12::count() const
