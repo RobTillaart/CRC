@@ -22,7 +22,7 @@ void loop()
 
 void test()
 {
-  CRC64 crc();
+  CRC64 crc;
   crc.add((uint8_t*)str, 9);
   Serial.println(print64(crc.getCRC(), HEX));
 
