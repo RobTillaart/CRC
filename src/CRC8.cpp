@@ -76,7 +76,7 @@ void CRC8::add(const uint8_t *array, size_t length)
   }
 }
 
-void CRC8::yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod)
+void CRC8::yieldAdd(const uint8_t *array, size_t length, size_t yieldPeriod)
 {
   while (length--)
   {

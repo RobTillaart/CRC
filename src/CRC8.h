@@ -22,7 +22,7 @@ public:
   size_t count() const;
   void add(uint8_t value);
   void add(const uint8_t *array, size_t length);
-  void yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+  void yieldAdd(const uint8_t *array, size_t length, size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
 
   void setPolynome(uint8_t polynome) { _polynome = polynome; }
   void setInitial(uint8_t initial) { _initial = initial; }
