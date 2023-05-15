@@ -58,7 +58,7 @@ and the returned CRC.
 Use **\#include "CRC8.h"**
 
 - **CRC8(polynome, initial, xorOut, reverseIn, reverseOut)** Constructor to set all parameters at once.
-- **void reset()** reset internal CRC and count only;
+- **void restart()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.
 - **uint8_t getCRC()** returns CRC calculated so far. This allows to check the CRC of
 a really large stream at intermediate moments, e.g. to link multiple packets.

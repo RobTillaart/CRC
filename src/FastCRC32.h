@@ -7,7 +7,7 @@ class FastCRC32
 public:
   FastCRC32();
 
-  void reset();
+  void restart();
   uint32_t getCRC() const;
   size_t count() const;
   void add(uint8_t value);

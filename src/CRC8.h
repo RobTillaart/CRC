@@ -11,7 +11,7 @@ public:
        bool reverseIn   = CRC8_REF_IN,
        bool reverseOut  = CRC8_REF_OUT);
 
-  void reset();
+  void restart();
   uint8_t getCRC() const;
   size_t count() const;
   void add(uint8_t value);

@@ -15,7 +15,7 @@ CRC16::CRC16(uint16_t polynome,
   _count(0u)
 {}
 
-void CRC16::reset()
+void CRC16::restart()
 {
   _crc = _initial;
   _count = 0u;

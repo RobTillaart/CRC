@@ -24,7 +24,7 @@ FastCRC32::FastCRC32() :
   _count(0u)
 {}
 
-void FastCRC32::reset()
+void FastCRC32::restart()
 {
   _crc = CRC32_INITIAL;
   _count = 0u;

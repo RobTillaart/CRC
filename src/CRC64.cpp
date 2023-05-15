@@ -15,7 +15,7 @@ CRC64::CRC64(uint64_t polynome,
   _count(0u)
 {}
 
-void CRC64::reset()
+void CRC64::restart()
 {
   _crc = _initial;
   _count = 0u;

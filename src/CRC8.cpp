@@ -15,7 +15,7 @@ CRC8::CRC8(uint8_t polynome,
   _count(0u)
 {}
 
-void CRC8::reset()
+void CRC8::restart()
 {
   _crc = _initial;
   _count = 0u;

@@ -15,7 +15,7 @@ CRC32::CRC32(uint32_t polynome,
   _count(0u)
 {}
 
-void CRC32::reset()
+void CRC32::restart()
 {
   _crc = _initial;
   _count = 0u;

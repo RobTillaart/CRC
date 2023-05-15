@@ -30,7 +30,7 @@ void test()
   crc.add((uint8_t*)str, 9);
   Serial.println(crc.getCRC(), HEX);
 
-  crc.reset();
+  crc.restart();
   for (int i = 0; i < 9; i++)
   {
     crc.add(str[i]);
