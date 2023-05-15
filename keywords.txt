@@ -23,11 +23,22 @@ yieldCrc32	KEYWORD2
 yieldCrc64	KEYWORD2
 
 reset	KEYWORD2
+restart	KEYWORD2
 getCRC	KEYWORD2
 count	KEYWORD2
 add	KEYWORD2
 yieldAdd	KEYWORD2
 
+setPolynome	KEYWORD2
+setInitial	KEYWORD2
+setXorOut	KEYWORD2
+setReverseIn	KEYWORD2
+setReverseOut	KEYWORD2
+getPolynome	KEYWORD2
+getInitial	KEYWORD2
+getXorOut	KEYWORD2
+getReverseIn	KEYWORD2
+getReverseOut	KEYWORD2
 
 # Instances (KEYWORD2)
 
