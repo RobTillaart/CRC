@@ -53,7 +53,7 @@ void FastCRC32::add(uint8_t value)
   _crc = FLASH_READ_DWORD(crc32LookupTable + (index & 0x0f)) ^ (_crc >> 4);
 }
 
-void FastCRC32::add(const uint8_t * array, size_t length)
+void FastCRC32::add(const uint8_t *array, size_t length)
 {
   while (length--)
   {
@@ -61,7 +61,7 @@ void FastCRC32::add(const uint8_t * array, size_t length)
   }
 }
 
-void FastCRC32::yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod)
+void FastCRC32::yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod)
 {
   while (length--)
   {

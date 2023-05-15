@@ -68,7 +68,7 @@ void CRC64::add(uint8_t value)
   }
 }
 
-void CRC64::add(const uint8_t * array, size_t length)
+void CRC64::add(const uint8_t *array, size_t length)
 {
   while (length--)
   {
@@ -76,7 +76,7 @@ void CRC64::add(const uint8_t * array, size_t length)
   }
 }
 
-void CRC64::yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod)
+void CRC64::yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod)
 {
   while (length--)
   {

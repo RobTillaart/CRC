@@ -21,8 +21,8 @@ public:
   uint16_t getCRC() const;
   size_t count() const;
   void add(uint8_t value);
-  void add(const uint8_t * array, size_t length);
-  void yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+  void add(const uint8_t *array, size_t length);
+  void yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
 
   void setPolynome(uint16_t polynome) { _polynome = polynome; }
   void setInitial(uint16_t initial) { _initial = initial; }

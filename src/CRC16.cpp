@@ -68,7 +68,7 @@ void CRC16::add(uint8_t value)
   }
 }
 
-void CRC16::add(const uint8_t * array, size_t length)
+void CRC16::add(const uint8_t *array, size_t length)
 {
   while (length--)
   {
@@ -76,7 +76,7 @@ void CRC16::add(const uint8_t * array, size_t length)
   }
 }
 
-void CRC16::yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod)
+void CRC16::yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod)
 {
   while (length--)
   {

@@ -11,8 +11,8 @@ public:
   uint32_t getCRC() const;
   size_t count() const;
   void add(uint8_t value);
-  void add(const uint8_t * array, size_t length);
-  void yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+  void add(const uint8_t *array, size_t length);
+  void yieldAdd(const uint8_t *array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
 
 private:
   uint32_t _crc;
