@@ -1,11 +1,11 @@
 #include "CRC64.h"
 #include "CrcFastReverse.h"
 
-CRC64::CRC64(const uint64_t polynome,
-             const uint64_t initial,
-             const uint64_t xorOut,
-             const bool reverseIn,
-             const bool reverseOut) :
+CRC64::CRC64(uint64_t polynome,
+             uint64_t initial,
+             uint64_t xorOut,
+             bool reverseIn,
+             bool reverseOut) :
   _polynome(polynome),
   _initial(initial),
   _xorOut(xorOut),

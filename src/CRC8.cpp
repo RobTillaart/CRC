@@ -1,11 +1,11 @@
 #include "CRC8.h"
 #include "CrcFastReverse.h"
 
-CRC8::CRC8(const uint8_t polynome,
-           const uint8_t initial,
-           const uint8_t xorOut,
-           const bool reverseIn,
-           const bool reverseOut) :
+CRC8::CRC8(uint8_t polynome,
+           uint8_t initial,
+           uint8_t xorOut,
+           bool reverseIn,
+           bool reverseOut) :
   _polynome(polynome),
   _initial(initial),
   _xorOut(xorOut),

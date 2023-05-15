@@ -1,11 +1,11 @@
 #include "CRC12.h"
 #include "CrcFastReverse.h"
 
-CRC12::CRC12(const uint16_t polynome,
-             const uint16_t initial,
-             const uint16_t xorOut,
-             const bool reverseIn,
-             const bool reverseOut) :
+CRC12::CRC12(uint16_t polynome,
+             uint16_t initial,
+             uint16_t xorOut,
+             bool reverseIn,
+             bool reverseOut) :
   _polynome(polynome),
   _initial(initial),
   _xorOut(xorOut),
