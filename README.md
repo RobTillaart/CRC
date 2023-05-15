@@ -58,6 +58,7 @@ and the returned CRC.
 Use **\#include "CRC8.h"**
 
 - **CRC8(polynome, initial, xorOut, reverseIn, reverseOut)** Constructor to set all parameters at once.
+- **void reset()** set all internals to defaults of the **CRC8()** parameterless constructor.
 - **void restart()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.
 - **uint8_t getCRC()** returns CRC calculated so far. This allows to check the CRC of
@@ -70,6 +71,20 @@ In case of a warning/error for the array type, use casting to (uint8_t \*).
 the classes call **yield()** after every **yieldPeriod** calls to keep RTOS environments happy. The call allows to add values with
 **yield()** to get optimal performance. The risk is missing context switching to handle interrupts etc. So use at own risk.
 
+#### Parameters
+
+The parameters do not have defaults so the user must set them explicitly.
+
+- **void setPolynome(polynome)** set polynome, note reset sets a default polynome.
+- **void setInitial(initial)** set start-mask, default 0.
+- **void setXorOut(xorOut)** set end-mask, default 0.
+- **void setReverseIn(reverseIn)** reverse the bit pattern of input data (MSB vs LSB).
+- **void setReverseOut(reverseOut)** reverse the bit pattern of CRC (MSB vs LSB).
+- **uint8_t getPolynome()** return parameter set above or default.
+- **uint8_t getInitial()** return parameter set above or default.
+- **uint8_t getXorOut()** return parameter set above or default.
+- **bool getReverseIn()** return parameter set above or default.
+- **bool getReverseOut()** return parameter set above or default.
 
 ### Example snippet
 
