@@ -24,6 +24,18 @@ public:
   void add(const uint8_t * array, size_t length);
   void yieldAdd(const uint8_t * array, size_t length, const size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
 
+  void setPolynome(uint64_t polynome) { _polynome = polynome; }
+  void setInitial(uint64_t initial) { _initial = initial; }
+  void setXorOut(uint64_t xorOut) { _xorOut = xorOut; }
+  void setReverseIn(bool reverseIn) { _reverseIn = reverseIn; }
+  void setReverseOut(bool reverseOut) { _reverseOut = reverseOut; }
+
+  uint64_t getPolynome() const { return _polynome; }
+  uint64_t getInitial() const { return _initial; }
+  uint64_t getXorOut() const { return _xorOut; }
+  bool getReverseIn() const { return _reverseIn; }
+  bool getReverseOut() const { return _reverseOut; }
+
 private:
   uint64_t _polynome;
   uint64_t _initial;
