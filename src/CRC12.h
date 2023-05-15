@@ -11,6 +11,12 @@ public:
         bool reverseIn    = CRC12_REF_IN,
         bool reverseOut   = CRC12_REF_OUT);
 
+  void reset(uint16_t polynome = CRC12_POLYNOME,
+             uint16_t initial  = CRC12_INITIAL,
+             uint16_t xorOut   = CRC12_XOR_OUT,
+             bool reverseIn    = CRC12_REF_IN,
+             bool reverseOut   = CRC12_REF_OUT);
+
   void restart();
   uint16_t getCRC() const;
   size_t count() const;

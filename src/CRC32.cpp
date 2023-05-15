@@ -15,6 +15,20 @@ CRC32::CRC32(uint32_t polynome,
   _count(0u)
 {}
 
+void CRC32::reset(uint32_t polynome,
+                  uint32_t initial,
+                  uint32_t xorOut,
+                  bool reverseIn,
+                  bool reverseOut)
+{
+  _polynome = polynome;
+  _initial = initial;
+  _xorOut = xorOut;
+  _reverseIn = reverseIn;
+  _reverseOut = reverseOut;
+  restart();
+}
+
 void CRC32::restart()
 {
   _crc = _initial;

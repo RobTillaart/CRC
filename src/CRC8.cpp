@@ -15,6 +15,20 @@ CRC8::CRC8(uint8_t polynome,
   _count(0u)
 {}
 
+void CRC8::reset(uint8_t polynome,
+                 uint8_t initial,
+                 uint8_t xorOut,
+                 bool reverseIn,
+                 bool reverseOut)
+{
+  _polynome = polynome;
+  _initial = initial;
+  _xorOut = xorOut;
+  _reverseIn = reverseIn;
+  _reverseOut = reverseOut;
+  restart();
+}
+
 void CRC8::restart()
 {
   _crc = _initial;
