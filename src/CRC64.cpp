@@ -90,7 +90,7 @@ void CRC64::add(const uint8_t *array, size_t length, size_t yieldPeriod)
   }
 }
 
-uint8_t CRC64::getCRC() const
+uint64_t CRC64::getCRC() const
 {
   return calc();
 }

@@ -37,7 +37,7 @@ public:
   bool getReverseOut() const { return _reverseOut; }
 
   [[deprecated("Use calc() instead")]]
-  uint8_t getCRC() const;
+  uint16_t getCRC() const;
   [[deprecated("Use setInitial() instead")]]
   void setStartXOR(uint16_t initial) { _initial = initial; }
   [[deprecated("Use setXorOut() instead")]]

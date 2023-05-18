@@ -39,13 +39,13 @@ public:
   [[deprecated("Use calc() instead")]]
   uint8_t getCRC() const;
   [[deprecated("Use setInitial() instead")]]
-  void setStartXOR(uint16_t initial) { _initial = initial; }
+  void setStartXOR(uint8_t initial) { _initial = initial; }
   [[deprecated("Use setXorOut() instead")]]
-  void setEndXOR(uint16_t xorOut) { _xorOut = xorOut; }
+  void setEndXOR(uint8_t xorOut) { _xorOut = xorOut; }
   [[deprecated("Use getInitial() instead")]]
-  uint16_t getStartXOR() const { return _initial; }
+  uint8_t getStartXOR() const { return _initial; }
   [[deprecated("Use getXorOut() instead")]]
-  uint16_t getEndXOR() const { return _xorOut; }
+  uint8_t getEndXOR() const { return _xorOut; }
   [[deprecated("Use add() with yieldPeriod instead")]]
   void enableYield() const {}
   [[deprecated("Use add() without yieldPeriod instead")]]

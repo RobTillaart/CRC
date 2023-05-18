@@ -90,7 +90,7 @@ void CRC32::add(const uint8_t *array, size_t length, size_t yieldPeriod)
   }
 }
 
-uint8_t CRC32::getCRC() const
+uint32_t CRC32::getCRC() const
 {
   return calc();
 }
