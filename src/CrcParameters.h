@@ -114,11 +114,11 @@
 #define CRC16_CCITT_REF_IN          false
 #define CRC16_CCITT_REF_OUT         false
 
-#define CRC16_ARC_POLYNOME          0x8005
-#define CRC16_ARC_INITIAL           0x0000
-#define CRC16_ARC_XOR_OUT           0x0000
-#define CRC16_ARC_REF_IN            true
-#define CRC16_ARC_REF_OUT           true
+#define CRC16_CCITT_FALSE_POLYNOME  0x1021
+#define CRC16_CCITT_FALSE_INITIAL   0xFFFF
+#define CRC16_CCITT_FALSE_XOR_OUT   0x0000
+#define CRC16_CCITT_FALSE_REF_IN    false
+#define CRC16_CCITT_FALSE_REF_OUT   false
 
 #define CRC16_AUG_CCITT_POLYNOME    0x1021
 #define CRC16_AUG_CCITT_INITIAL     0x1D0F
@@ -126,17 +126,17 @@
 #define CRC16_AUG_CCITT_REF_IN      false
 #define CRC16_AUG_CCITT_REF_OUT     false
 
+#define CRC16_ARC_POLYNOME          0x8005
+#define CRC16_ARC_INITIAL           0x0000
+#define CRC16_ARC_XOR_OUT           0x0000
+#define CRC16_ARC_REF_IN            true
+#define CRC16_ARC_REF_OUT           true
+
 #define CRC16_BUYPASS_POLYNOME      0x8005
 #define CRC16_BUYPASS_INITIAL       0x0000
 #define CRC16_BUYPASS_XOR_OUT       0x0000
 #define CRC16_BUYPASS_REF_IN        false
 #define CRC16_BUYPASS_REF_OUT       false
-
-#define CRC16_CCITT_FALSE_POLYNOME  0x1021
-#define CRC16_CCITT_FALSE_INITIAL   0xFFFF
-#define CRC16_CCITT_FALSE_XOR_OUT   0x0000
-#define CRC16_CCITT_FALSE_REF_IN    false
-#define CRC16_CCITT_FALSE_REF_OUT   false
 
 #define CRC16_CDMA2000_POLYNOME     0xC867
 #define CRC16_CDMA2000_INITIAL      0xFFFF
