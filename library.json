@@ -8,6 +8,11 @@
       "name": "Rob Tillaart",
       "email": "Rob.Tillaart@gmail.com",
       "maintainer": true
+    },
+    {
+      "name": "Włodzimierz Ciesielski",
+      "email": "vovagorodok2@gmail.com",
+      "maintainer": true
     }
   ],
   "repository":
