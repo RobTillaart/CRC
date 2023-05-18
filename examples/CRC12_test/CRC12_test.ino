@@ -31,9 +31,9 @@ void test()
   Serial.println(crc12((uint8_t *) str2, 18), HEX);
 
   crc.add((uint8_t*)str1, 9);
-  Serial.println(crc.getCRC(), HEX);
+  Serial.println(crc.calc(), HEX);
   crc.add((uint8_t*)str2, 9);
-  Serial.println(crc.getCRC(), HEX);
+  Serial.println(crc.calc(), HEX);
 
   crc.restart();
   for (int i = 0; i < 9; i++)
@@ -41,7 +41,7 @@ void test()
     crc.add(str1[i]);
     Serial.print(i);
     Serial.print("\t");
-    Serial.println(crc.getCRC(), HEX);
+    Serial.println(crc.calc(), HEX);
   }
   Serial.println(crc.count());
 }

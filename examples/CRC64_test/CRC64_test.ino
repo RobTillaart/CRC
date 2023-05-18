@@ -24,25 +24,25 @@ void test()
 {
   CRC64 crc;
   crc.add((uint8_t*)str, 9);
-  Serial.println(print64(crc.getCRC(), HEX));
+  Serial.println(print64(crc.calc(), HEX));
 
   crc.restart();
   for (int i = 0; i < 9; i++)
   {
     crc.add(str[i]);
   }
-  Serial.println(print64(crc.getCRC(), HEX));
+  Serial.println(print64(crc.calc(), HEX));
 
   CRC64 customCrc(0x07);
   customCrc.add((uint8_t*)str, 9);
-  Serial.println(print64(customCrc.getCRC(), HEX));
+  Serial.println(print64(customCrc.calc(), HEX));
 
   customCrc.restart();
   for (int i = 0; i < 9; i++)
   {
     customCrc.add(str[i]);
   }
-  Serial.println(print64(customCrc.getCRC(), HEX));
+  Serial.println(print64(customCrc.calc(), HEX));
   Serial.println(customCrc.count());
 }
 

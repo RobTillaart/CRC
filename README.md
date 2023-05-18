@@ -61,7 +61,7 @@ Use **\#include "CRC8.h"**
 - **void reset()** set all internals to defaults of the **CRC8()** parameterless constructor.
 - **void restart()** reset internal CRC and count only;
 reuse values for other e.g polynome, XOR masks and reverse flags.
-- **uint8_t getCRC()** returns CRC calculated so far. This allows to check the CRC of
+- **uint8_t calc()** returns CRC calculated so far. This allows to check the CRC of
 a really large stream at intermediate moments, e.g. to link multiple packets.
 - **size_t count()** returns number of values added so far. Default 0.
 - **void add(value)** add a single value to CRC calculation.
@@ -89,7 +89,7 @@ The parameters do not have defaults so the user must set them explicitly.
 ### Example snippet
 
 A minimal usage only needs:
-- the constructor, the add() function and the getCRC() function.
+- the constructor, the add() function and the calc() function.
 
 ```cpp
 #include "CRC32.h"
@@ -102,7 +102,7 @@ CRC32 crc;
     int c = Serial.read();
     crc.add(c);
   }
-  Serial.println(crc.getCRC());
+  Serial.println(crc.calc());
 ```
 
 

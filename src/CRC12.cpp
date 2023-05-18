@@ -35,7 +35,7 @@ void CRC12::restart()
   _count = 0u;
 }
 
-uint16_t CRC12::getCRC() const
+uint16_t CRC12::calc() const
 {
   uint16_t rv = _crc;
   if (_reverseOut) rv = reverse12bits(rv);
@@ -88,4 +88,9 @@ void CRC12::add(const uint8_t *array, size_t length, size_t yieldPeriod)
       period = yieldPeriod;
     }
   }
+}
+
+uint8_t CRC12::getCRC() const
+{
+  return calc();
 }

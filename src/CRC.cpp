@@ -8,7 +8,7 @@ uint8_t crc8(const uint8_t *array, size_t length,
   yieldPeriod == CRC_YIELD_DISABLED ?
     crc.add(array, length) :
     crc.add(array, length, yieldPeriod);
-  return crc.getCRC();
+  return crc.calc();
 }
 
 uint16_t crc12(const uint8_t *array, size_t length,
@@ -19,7 +19,7 @@ uint16_t crc12(const uint8_t *array, size_t length,
   yieldPeriod == CRC_YIELD_DISABLED ?
     crc.add(array, length) :
     crc.add(array, length, yieldPeriod);
-  return crc.getCRC();
+  return crc.calc();
 }
 
 uint16_t crc16(const uint8_t *array, size_t length,
@@ -30,7 +30,7 @@ uint16_t crc16(const uint8_t *array, size_t length,
   yieldPeriod == CRC_YIELD_DISABLED ?
     crc.add(array, length) :
     crc.add(array, length, yieldPeriod);
-  return crc.getCRC();
+  return crc.calc();
 }
 
 uint32_t crc32(const uint8_t *array, size_t length,
@@ -41,7 +41,7 @@ uint32_t crc32(const uint8_t *array, size_t length,
   yieldPeriod == CRC_YIELD_DISABLED ?
     crc.add(array, length) :
     crc.add(array, length, yieldPeriod);
-  return crc.getCRC();
+  return crc.calc();
 }
 
 uint64_t crc64(const uint8_t *array, size_t length,
@@ -52,5 +52,5 @@ uint64_t crc64(const uint8_t *array, size_t length,
   yieldPeriod == CRC_YIELD_DISABLED ?
     crc.add(array, length) :
     crc.add(array, length, yieldPeriod);
-  return crc.getCRC();
+  return crc.calc();
 }

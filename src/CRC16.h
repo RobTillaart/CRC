@@ -18,7 +18,7 @@ public:
              bool reverseOut   = CRC16_REF_OUT);
 
   void restart();
-  uint16_t getCRC() const;
+  uint16_t calc() const;
   size_t count() const;
   void add(uint8_t value);
   void add(const uint8_t *array, size_t length);
@@ -35,6 +35,9 @@ public:
   uint16_t getXorOut() const { return _xorOut; }
   bool getReverseIn() const { return _reverseIn; }
   bool getReverseOut() const { return _reverseOut; }
+
+  [[deprecated("Use calc() instead")]]
+  uint8_t getCRC() const;
 
 private:
   uint16_t _polynome;

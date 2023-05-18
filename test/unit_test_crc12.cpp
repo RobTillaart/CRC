@@ -52,9 +52,9 @@ unittest(test_crc12)
 
   CRC12 crc;
   crc.add(data, 9);
-  assertEqual(0xEFB, crc.getCRC());
+  assertEqual(0xEFB, crc.calc());
   crc.add(data, 9);
-  assertEqual(0x1B3, crc.getCRC());
+  assertEqual(0x1B3, crc.calc());
 
   assertEqual(0xEFB, crc12(data, 9));
 

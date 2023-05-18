@@ -8,7 +8,7 @@ public:
   FastCRC32();
 
   void restart();
-  uint32_t getCRC() const;
+  uint32_t calc() const;
   size_t count() const;
   void add(uint8_t value);
   void add(const uint8_t *array, size_t length);

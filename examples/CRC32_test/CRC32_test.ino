@@ -24,13 +24,13 @@ void loop()
 void test()
 {
   crc.add((uint8_t*)str, 9);
-  Serial.println(crc.getCRC(), HEX);
+  Serial.println(crc.calc(), HEX);
 
   crc.restart();
   for (int i = 0; i < 9; i++)
   {
     crc.add(str[i]);
   }
-  Serial.println(crc.getCRC(), HEX);
+  Serial.println(crc.calc(), HEX);
   Serial.println(crc.count());
 }

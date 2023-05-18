@@ -35,7 +35,7 @@ void CRC64::restart()
   _count = 0u;
 }
 
-uint64_t CRC64::getCRC() const
+uint64_t CRC64::calc() const
 {
   uint64_t rv = _crc;
   if (_reverseOut) rv = reverse64bits(rv);
@@ -88,4 +88,9 @@ void CRC64::add(const uint8_t *array, size_t length, size_t yieldPeriod)
       period = yieldPeriod;
     }
   }
+}
+
+uint8_t CRC64::getCRC() const
+{
+  return calc();
 }

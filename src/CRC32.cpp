@@ -35,7 +35,7 @@ void CRC32::restart()
   _count = 0u;
 }
 
-uint32_t CRC32::getCRC() const
+uint32_t CRC32::calc() const
 {
   uint32_t rv = _crc;
   if (_reverseOut) rv = reverse32bits(rv);
@@ -88,4 +88,9 @@ void CRC32::add(const uint8_t *array, size_t length, size_t yieldPeriod)
       period = yieldPeriod;
     }
   }
+}
+
+uint8_t CRC32::getCRC() const
+{
+  return calc();
 }

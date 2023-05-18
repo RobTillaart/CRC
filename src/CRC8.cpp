@@ -35,7 +35,7 @@ void CRC8::restart()
   _count = 0u;
 }
 
-uint8_t CRC8::getCRC() const
+uint8_t CRC8::calc() const
 {
   uint8_t rv = _crc;
   if (_reverseOut) rv = reverse8bits(rv);
@@ -88,4 +88,9 @@ void CRC8::add(const uint8_t *array, size_t length, size_t yieldPeriod)
       period = yieldPeriod;
     }
   }
+}
+
+uint8_t CRC8::getCRC() const
+{
+  return calc();
 }

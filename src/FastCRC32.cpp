@@ -30,7 +30,7 @@ void FastCRC32::restart()
   _count = 0u;
 }
 
-uint32_t FastCRC32::getCRC() const
+uint32_t FastCRC32::calc() const
 {
   return _crc ^ CRC32_XOR_OUT;
 }

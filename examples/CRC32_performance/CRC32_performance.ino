@@ -42,7 +42,7 @@ void test()
   Serial.print("DATA: \t");
   Serial.println(length);
   Serial.print(" CRC:\t");
-  Serial.println(crc.getCRC(), HEX);
+  Serial.println(crc.calc(), HEX);
   Serial.print("TIME: \t");
   Serial.println(stop - start);
   Serial.println();
@@ -55,7 +55,7 @@ void test()
   Serial.print("DATA: \t");
   Serial.println(length);
   Serial.print(" CRC:\t");
-  Serial.println(nonReversedCrc.getCRC(), HEX);
+  Serial.println(nonReversedCrc.calc(), HEX);
   Serial.print("TIME: \t");
   Serial.println(stop - start);
   delay(100);
