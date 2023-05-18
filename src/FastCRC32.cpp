@@ -63,9 +63,14 @@ void FastCRC32::add(const uint8_t *array, size_t length)
 
 void FastCRC32::add(const uint8_t *array, size_t length, size_t yieldPeriod)
 {
+  size_t period = yieldPeriod;
   while (length--)
   {
     add(*array++);
-    if ((_count % yieldPeriod) == 0) yield();
+    if (--period == 0)
+    {
+      yield();
+      period = yieldPeriod;
+    }
   }
 }
