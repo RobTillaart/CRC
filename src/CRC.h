@@ -94,6 +94,16 @@ uint16_t crc16(
     bool reverseOut    = CRC16_REF_OUT,
     size_t yieldPeriod = CRC_YIELD_DISABLED);
 
+[[deprecated("Use calcCRC16() with CRC16_CCITT_FALSE params instead")]]
+uint16_t crc16_CCITT(
+    const uint8_t *array, size_t length,
+    uint16_t polynome  = CRC16_CCITT_FALSE_POLYNOME,
+    uint16_t initial   = CRC16_CCITT_FALSE_INITIAL,
+    uint16_t xorOut    = CRC16_CCITT_FALSE_XOR_OUT,
+    bool reverseIn     = CRC16_CCITT_FALSE_REF_IN,
+    bool reverseOut    = CRC16_CCITT_FALSE_REF_OUT,
+    size_t yieldPeriod = CRC_YIELD_DISABLED);
+
 [[deprecated("Use calcCRC32() instead")]]
 uint32_t crc32(
     const uint8_t *array, size_t length,
