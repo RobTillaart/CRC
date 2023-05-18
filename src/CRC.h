@@ -25,7 +25,7 @@ uint8_t crc8(
     uint8_t xorOut     = CRC8_XOR_OUT,
     bool reverseIn     = CRC8_REF_IN,
     bool reverseOut    = CRC8_REF_OUT,
-    size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+    size_t yieldPeriod = CRC_YIELD_DISABLED);
 
 uint16_t crc12(
     const uint8_t *array, size_t length,
@@ -34,7 +34,7 @@ uint16_t crc12(
     uint16_t xorOut    = CRC12_XOR_OUT,
     bool reverseIn     = CRC12_REF_IN,
     bool reverseOut    = CRC12_REF_OUT,
-    size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+    size_t yieldPeriod = CRC_YIELD_DISABLED);
 
 uint16_t crc16(
     const uint8_t *array, size_t length,
@@ -43,7 +43,7 @@ uint16_t crc16(
     uint16_t xorOut    = CRC16_XOR_OUT,
     bool reverseIn     = CRC16_REF_IN,
     bool reverseOut    = CRC16_REF_OUT,
-    size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+    size_t yieldPeriod = CRC_YIELD_DISABLED);
 
 uint32_t crc32(
     const uint8_t *array, size_t length,
@@ -52,7 +52,7 @@ uint32_t crc32(
     uint32_t xorOut    = CRC32_XOR_OUT,
     bool reverseIn     = CRC32_REF_IN,
     bool reverseOut    = CRC32_REF_OUT,
-    size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+    size_t yieldPeriod = CRC_YIELD_DISABLED);
 
 uint64_t crc64(
     const uint8_t *array, size_t length,
@@ -61,4 +61,4 @@ uint64_t crc64(
     uint64_t xorOut    = CRC64_XOR_OUT,
     bool reverseIn     = CRC64_REF_IN,
     bool reverseOut    = CRC64_REF_OUT,
-    size_t yieldPeriod = CRC_DEFAULT_YIELD_PERIOD);
+    size_t yieldPeriod = CRC_YIELD_DISABLED);

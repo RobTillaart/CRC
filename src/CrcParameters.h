@@ -2,7 +2,7 @@
 // Polynomes from
 //          https://en.wikipedia.org/wiki/Cyclic_redundancy_check#Polynomial_representations_of_cyclic_redundancy_checks
 
-#define CRC_DEFAULT_YIELD_PERIOD    255
+#define CRC_YIELD_DISABLED         0
 
 
 // CRC 4
