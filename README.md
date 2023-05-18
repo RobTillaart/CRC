@@ -32,7 +32,7 @@ are explicitly set.
 
 
 **Note** the classes have same names as the static functions, except the class
-is UPPER case. So **CRC8** is a class and **crc8()** is the function.
+is UPPER case. So **CRC8** is a class and **calcCRC8()** is the function.
 
 Deeper tech info - https://en.wikipedia.org/wiki/Cyclic_redundancy_check
 and many other websites.
@@ -115,11 +115,11 @@ However these parameters allow one to tweak the CRC in all aspects known.
 In all the examples encountered the reverse flags were set both to false or both to true.
 For flexibility both parameters are kept available.
 
-- **uint8_t crc8(array, length)** idem with default polynome.
-- **uint16_t crc12(array, length)** idem with default polynome.
-- **uint16_t crc16(array, length)** idem with default polynome.
-- **uint32_t crc32(array, length)** idem with default polynome.
-- **uint64_t crc64(array, length)** - experimental version, no reference found except on Wikipedia.
+- **uint8_t calcCRC8(array, length)** idem with default polynome.
+- **uint16_t calcCRC12(array, length)** idem with default polynome.
+- **uint16_t calcCRC16(array, length)** idem with default polynome.
+- **uint32_t calcCRC32(array, length)** idem with default polynome.
+- **uint64_t calcCRC64(array, length)** - experimental version, no reference found except on Wikipedia.
 
 
 The static functions **yieldCrc..()** in this library also support yield.

@@ -56,7 +56,7 @@ unittest(test_crc12)
   crc.add(data, 9);
   assertEqual(0x1B3, crc.calc());
 
-  assertEqual(0xEFB, crc12(data, 9));
+  assertEqual(0xEFB, calcCRC12(data, 9));
 
   // TODO extend
 

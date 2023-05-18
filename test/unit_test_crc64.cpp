@@ -51,7 +51,7 @@ unittest(test_crc64)
 {
   fprintf(stderr, "TEST CRC64\n");
   
-  assertEqual(0xCE5CA2AD34A16112, crc64(data, 9, 0x04C11DB704C11DB7));  // 14869938934466568466
+  assertEqual(0xCE5CA2AD34A16112, calcCRC64(data, 9, 0x04C11DB704C11DB7));  // 14869938934466568466
 }
 
 

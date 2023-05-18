@@ -25,7 +25,7 @@ void loop()
 
 void test()
 {
-  Serial.println(crc8((uint8_t *)str, 9), HEX);
+  Serial.println(calcCRC8((uint8_t *)str, 9), HEX);
 
   crc.add((uint8_t*)str, 9);
   Serial.println(crc.calc(), HEX);

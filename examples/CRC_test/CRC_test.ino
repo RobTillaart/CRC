@@ -16,13 +16,13 @@ void setup()
   Serial.print("TEST:\t");
   Serial.println(str);
   Serial.print("CRC8:\t");
-  Serial.println(crc8(data, 9), HEX);
+  Serial.println(calcCRC8(data, 9), HEX);
   Serial.print("CRC16:\t");
-  Serial.println(crc16(data, 9), HEX);
+  Serial.println(calcCRC16(data, 9), HEX);
   Serial.print("CRC32:\t");
-  Serial.println(crc32(data, 9), HEX);
+  Serial.println(calcCRC32(data, 9), HEX);
 //  Serial.print("*CRC64:\t");
-//  uint64_t t = crc64(data, 9);
+//  uint64_t t = calcCRC64(data, 9);
 //  Serial.println(print64(t, HEX));
   
   Serial.println("\n\nDone...");

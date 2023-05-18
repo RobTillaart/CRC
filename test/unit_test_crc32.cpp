@@ -51,15 +51,15 @@ unittest(test_crc32)
 {
   fprintf(stderr, "TEST CRC32\n");
 
-  assertEqual(0xCBF43926, crc32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, true, true));
-  assertEqual(0xFC891918, crc32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, false, false));
-  assertEqual(0xE3069283, crc32(data, 9, 0x1EDC6F41, 0xFFFFFFFF, 0xFFFFFFFF, true, true));
-  assertEqual(0x87315576, crc32(data, 9, 0xA833982B, 0xFFFFFFFF, 0xFFFFFFFF, true, true));
-  assertEqual(0x0376E6E7, crc32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0x00000000, false, false));
-  assertEqual(0x765E7680, crc32(data, 9, 0x04C11DB7, 0x00000000, 0xFFFFFFFF, false, false));
-  assertEqual(0x3010BF7F, crc32(data, 9, 0x814141AB, 0x00000000, 0x00000000, false, false));
-  assertEqual(0x340BC6D9, crc32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0x00000000, true, true));
-  assertEqual(0xBD0BE338, crc32(data, 9, 0x000000AF, 0x00000000, 0x00000000, false, false));
+  assertEqual(0xCBF43926, calcCRC32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, true, true));
+  assertEqual(0xFC891918, calcCRC32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, false, false));
+  assertEqual(0xE3069283, calcCRC32(data, 9, 0x1EDC6F41, 0xFFFFFFFF, 0xFFFFFFFF, true, true));
+  assertEqual(0x87315576, calcCRC32(data, 9, 0xA833982B, 0xFFFFFFFF, 0xFFFFFFFF, true, true));
+  assertEqual(0x0376E6E7, calcCRC32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0x00000000, false, false));
+  assertEqual(0x765E7680, calcCRC32(data, 9, 0x04C11DB7, 0x00000000, 0xFFFFFFFF, false, false));
+  assertEqual(0x3010BF7F, calcCRC32(data, 9, 0x814141AB, 0x00000000, 0x00000000, false, false));
+  assertEqual(0x340BC6D9, calcCRC32(data, 9, 0x04C11DB7, 0xFFFFFFFF, 0x00000000, true, true));
+  assertEqual(0xBD0BE338, calcCRC32(data, 9, 0x000000AF, 0x00000000, 0x00000000, false, false));
 }
 
 
