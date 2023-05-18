@@ -67,7 +67,7 @@ a really large stream at intermediate moments, e.g. to link multiple packets.
 - **void add(value)** add a single value to CRC calculation.
 - **void add(array, length)** add an array of values to the CRC.
 In case of a warning/error for the array type, use casting to (uint8_t \*).
-- **void yieldAdd(array, length, yieldPeriod)** as CRC calculations of large blocks can take serious time (in milliseconds),
+- **void add(array, length, yieldPeriod)** as CRC calculations of large blocks can take serious time (in milliseconds),
 the classes call **yield()** after every **yieldPeriod** calls to keep RTOS environments happy. The call allows to add values with
 **yield()** to get optimal performance. The risk is missing context switching to handle interrupts etc. So use at own risk.
 
