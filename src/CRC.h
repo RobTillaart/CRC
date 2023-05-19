@@ -16,7 +16,7 @@
 #include "CrcParameters.h"
 #include <Arduino.h>
 
-#define CRC_LIB_VERSION       (F("0.4.0"))
+#define CRC_LIB_VERSION       (F("1.0.0"))
 
 uint8_t calcCRC8(
     const uint8_t *array, size_t length,

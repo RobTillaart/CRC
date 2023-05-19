@@ -139,7 +139,7 @@ Other reverses can be created in similar way.
 
 ## CrcParameters.h
 
-Since version 0.4.0 the file CrcParameters.h is added to hold symbolic names for certain parameters (polynomes, etc..).
+Since version 1.0.0 the file CrcParameters.h is added to hold symbolic names for certain parameters (polynomes, etc..).
 These can be used in your code too to minimize the number of "magic HEX codes".
 If standard polynomes are missing, please open an issue and report, with reference.
 
