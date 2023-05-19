@@ -122,7 +122,7 @@ For flexibility both parameters are kept available.
 - **uint64_t calcCRC64(array, length)** - experimental version, no reference found except on Wikipedia.
 
 
-The static functions **yieldCrc..()** in this library also support yield.
+The static functions **calcCRC..()** in this library also support yield.
 
 The static CRC functions use fast reverse functions that can be also be
 used outside CRC context. Their usage is straightforward.
