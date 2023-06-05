@@ -1,7 +1,7 @@
 
 #include "Arduino.h"
 #include "foo.h"
-#include "CrcFastReverse.h"
+#include "CRC.h"
 
 int foo(int n)
 {
