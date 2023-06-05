@@ -8,7 +8,11 @@
 //
 
 #include "CrcParameters.h"
-#include "CrcDefines.h"
+#include "CRC8.h"
+#include "CRC12.h"
+#include "CRC16.h"
+#include "CRC32.h"
+#include "CRC64.h"
 
 #define CRC_LIB_VERSION       (F("1.0.0"))
 
