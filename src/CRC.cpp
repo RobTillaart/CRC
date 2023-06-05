@@ -1,4 +1,9 @@
 #include "CRC.h"
+#include "CRC8.h"
+#include "CRC12.h"
+#include "CRC16.h"
+#include "CRC32.h"
+#include "CRC64.h"
 
 uint8_t calcCRC8(
   const uint8_t *array, crc_size_t length,

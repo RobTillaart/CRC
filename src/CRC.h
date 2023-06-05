@@ -7,14 +7,8 @@
 //     URL: https://github.com/RobTillaart/CRC
 //
 
-#include "CRC8.h"
-#include "CRC12.h"
-#include "CRC16.h"
-#include "CRC32.h"
-#include "CRC64.h"
-#include "CrcFastReverse.h"
 #include "CrcParameters.h"
-#include <Arduino.h>
+#include "CrcDefines.h"
 
 #define CRC_LIB_VERSION       (F("1.0.0"))
 
