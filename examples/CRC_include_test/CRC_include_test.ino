@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include "foo.h"
-#include "CRC.h"
+#include "CrcFastReverse.h"
 
 
 void setup() 
