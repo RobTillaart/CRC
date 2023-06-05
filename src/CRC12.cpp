@@ -43,7 +43,7 @@ uint16_t CRC12::calc() const
   return rv & 0x0FFF;
 }
 
-size_t CRC12::count() const
+crc_size_t CRC12::count() const
 {
   return _count;
 }
@@ -68,7 +68,7 @@ void CRC12::add(uint8_t value)
   }
 }
 
-void CRC12::add(const uint8_t *array, size_t length)
+void CRC12::add(const uint8_t *array, crc_size_t length)
 {
   while (length--)
   {
@@ -76,9 +76,9 @@ void CRC12::add(const uint8_t *array, size_t length)
   }
 }
 
-void CRC12::add(const uint8_t *array, size_t length, size_t yieldPeriod)
+void CRC12::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
 {
-  size_t period = yieldPeriod;
+  crc_size_t period = yieldPeriod;
   while (length--)
   {
     add(*array++);

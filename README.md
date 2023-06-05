@@ -63,7 +63,7 @@ Use **\#include "CRC8.h"**
 reuse values for other e.g polynome, XOR masks and reverse flags.
 - **uint8_t calc()** returns CRC calculated so far. This allows to check the CRC of
 a really large stream at intermediate moments, e.g. to link multiple packets.
-- **size_t count()** returns number of values added so far. Default 0.
+- **crc_size_t count()** returns number of values added so far. Default 0.
 - **void add(value)** add a single value to CRC calculation.
 - **void add(array, length)** add an array of values to the CRC.
 In case of a warning/error for the array type, use casting to (uint8_t \*).

@@ -43,7 +43,7 @@ uint64_t CRC64::calc() const
   return rv;
 }
 
-size_t CRC64::count() const
+crc_size_t CRC64::count() const
 {
   return _count;
 }
@@ -68,7 +68,7 @@ void CRC64::add(uint8_t value)
   }
 }
 
-void CRC64::add(const uint8_t *array, size_t length)
+void CRC64::add(const uint8_t *array, crc_size_t length)
 {
   while (length--)
   {
@@ -76,9 +76,9 @@ void CRC64::add(const uint8_t *array, size_t length)
   }
 }
 
-void CRC64::add(const uint8_t *array, size_t length, size_t yieldPeriod)
+void CRC64::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
 {
-  size_t period = yieldPeriod;
+  crc_size_t period = yieldPeriod;
   while (length--)
   {
     add(*array++);

@@ -43,7 +43,7 @@ uint8_t CRC8::calc() const
   return rv;
 }
 
-size_t CRC8::count() const
+crc_size_t CRC8::count() const
 {
   return _count;
 }
@@ -68,7 +68,7 @@ void CRC8::add(uint8_t value)
   }
 }
 
-void CRC8::add(const uint8_t *array, size_t length)
+void CRC8::add(const uint8_t *array, crc_size_t length)
 {
   while (length--)
   {
@@ -76,9 +76,9 @@ void CRC8::add(const uint8_t *array, size_t length)
   }
 }
 
-void CRC8::add(const uint8_t *array, size_t length, size_t yieldPeriod)
+void CRC8::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
 {
-  size_t period = yieldPeriod;
+  crc_size_t period = yieldPeriod;
   while (length--)
   {
     add(*array++);

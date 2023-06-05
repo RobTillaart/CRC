@@ -33,7 +33,7 @@ void loop()
 
 void test()
 {
-  size_t length = strlen(str);
+  crc_size_t length = strlen(str);
 
   CRC32 crc;
   start = micros();

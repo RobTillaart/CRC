@@ -1,6 +1,6 @@
 #pragma once
 #include "CrcParameters.h"
-#include <Arduino.h>
+#include "CrcDefines.h"
 
 class CRC8
 {
@@ -19,10 +19,10 @@ public:
 
   void restart();
   uint8_t calc() const;
-  size_t count() const;
+  crc_size_t count() const;
   void add(uint8_t value);
-  void add(const uint8_t *array, size_t length);
-  void add(const uint8_t *array, size_t length, size_t yieldPeriod);
+  void add(const uint8_t *array, crc_size_t length);
+  void add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod);
 
   void setPolynome(uint8_t polynome) { _polynome = polynome; }
   void setInitial(uint8_t initial) { _initial = initial; }
@@ -58,5 +58,5 @@ private:
   bool _reverseIn;
   bool _reverseOut;
   uint8_t _crc;
-  size_t _count;
+  crc_size_t _count;
 };
