@@ -43,7 +43,35 @@ crc_size_t FastCRC32::count() const
 void FastCRC32::add(uint8_t value)
 {
   _count++;
+  _add(value);
+}
 
+void FastCRC32::add(const uint8_t *array, crc_size_t length)
+{
+  _count += length;
+  while (length--)
+  {
+    _add(*array++);
+  }
+}
+
+void FastCRC32::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
+{
+  _count += length;
+  crc_size_t period = yieldPeriod;
+  while (length--)
+  {
+    _add(*array++);
+    if (--period == 0)
+    {
+      yield();
+      period = yieldPeriod;
+    }
+  }
+}
+
+void FastCRC32::_add(uint8_t value)
+{
   // via http://forum.arduino.cc/index.php?topic=91179.0
   uint8_t index = 0u;
 
@@ -51,26 +79,4 @@ void FastCRC32::add(uint8_t value)
   _crc = FLASH_READ_DWORD(crc32LookupTable + (index & 0x0f)) ^ (_crc >> 4);
   index = _crc ^ (value >> (1 * 4));
   _crc = FLASH_READ_DWORD(crc32LookupTable + (index & 0x0f)) ^ (_crc >> 4);
-}
-
-void FastCRC32::add(const uint8_t *array, crc_size_t length)
-{
-  while (length--)
-  {
-    add(*array++);
-  }
-}
-
-void FastCRC32::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
-{
-  crc_size_t period = yieldPeriod;
-  while (length--)
-  {
-    add(*array++);
-    if (--period == 0)
-    {
-      yield();
-      period = yieldPeriod;
-    }
-  }
 }

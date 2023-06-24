@@ -51,7 +51,35 @@ crc_size_t CRC16::count() const
 void CRC16::add(uint8_t value)
 {
   _count++;
+  _add(value);
+}
 
+void CRC16::add(const uint8_t *array, crc_size_t length)
+{
+  _count += length;
+  while (length--)
+  {
+    _add(*array++);
+  }
+}
+
+void CRC16::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
+{
+  _count += length;
+  crc_size_t period = yieldPeriod;
+  while (length--)
+  {
+    _add(*array++);
+    if (--period == 0)
+    {
+      yield();
+      period = yieldPeriod;
+    }
+  }
+}
+
+void CRC16::_add(uint8_t value)
+{
   if (_reverseIn) value = reverse8bits(value);
   _crc ^= ((uint16_t)value) << 8;
   for (uint8_t i = 8; i; i--) 
@@ -64,28 +92,6 @@ void CRC16::add(uint8_t value)
     else
     {
       _crc <<= 1;
-    }
-  }
-}
-
-void CRC16::add(const uint8_t *array, crc_size_t length)
-{
-  while (length--)
-  {
-    add(*array++);
-  }
-}
-
-void CRC16::add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod)
-{
-  crc_size_t period = yieldPeriod;
-  while (length--)
-  {
-    add(*array++);
-    if (--period == 0)
-    {
-      yield();
-      period = yieldPeriod;
     }
   }
 }

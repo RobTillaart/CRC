@@ -52,6 +52,8 @@ public:
   void disableYield() const {}
 
 private:
+  void _add(uint8_t value);
+
   uint16_t _polynome;
   uint16_t _initial;
   uint16_t _xorOut;

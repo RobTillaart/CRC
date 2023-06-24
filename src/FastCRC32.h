@@ -15,6 +15,8 @@ public:
   void add(const uint8_t *array, crc_size_t length, crc_size_t yieldPeriod);
 
 private:
+  void _add(uint8_t value);
+
   uint32_t _crc;
   crc_size_t _count;
 };
