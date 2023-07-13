@@ -1,4 +1,12 @@
 #pragma once
+//
+//    FILE: CRC12.h
+//  AUTHOR: Rob Tillaart
+// PURPOSE: Arduino class for CRC12
+//     URL: https://github.com/RobTillaart/CRC
+//          https://github.com/RobTillaart/CRC/issues/13
+
+
 #include "CrcParameters.h"
 #include "CrcDefines.h"
 
@@ -62,3 +70,7 @@ private:
   uint16_t _crc;
   crc_size_t _count;
 };
+
+
+// -- END OF FILE --
+

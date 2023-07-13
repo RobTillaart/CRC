@@ -1,6 +1,13 @@
 #pragma once
+//
+//    FILE: CrcParameters.h
+//  AUTHOR: vovagorodok
+// PURPOSE: Arduino class for CRC
+//     URL: https://github.com/RobTillaart/CRC
+
+
 // Polynomes from
-//          https://en.wikipedia.org/wiki/Cyclic_redundancy_check#Polynomial_representations_of_cyclic_redundancy_checks
+// https://en.wikipedia.org/wiki/Cyclic_redundancy_check#Polynomial_representations_of_cyclic_redundancy_checks
 
 #define CRC_YIELD_DISABLED         0
 

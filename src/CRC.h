@@ -121,3 +121,7 @@ uint64_t crc64(
     bool reverseIn     = CRC64_REF_IN,
     bool reverseOut    = CRC64_REF_OUT,
     crc_size_t yieldPeriod = CRC_YIELD_DISABLED);
+
+
+//  -- END OF FILE --
+
