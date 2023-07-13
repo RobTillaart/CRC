@@ -15,14 +15,14 @@ public:
   CRC64(uint64_t polynome = CRC64_POLYNOME,
         uint64_t initial  = CRC64_INITIAL,
         uint64_t xorOut   = CRC64_XOR_OUT,
-        bool reverseIn    = CRC64_REF_IN,
-        bool reverseOut   = CRC64_REF_OUT);
+        bool reverseIn    = CRC64_REV_IN,
+        bool reverseOut   = CRC64_REV_OUT);
 
   void reset(uint64_t polynome = CRC64_POLYNOME,
              uint64_t initial  = CRC64_INITIAL,
              uint64_t xorOut   = CRC64_XOR_OUT,
-             bool reverseIn    = CRC64_REF_IN,
-             bool reverseOut   = CRC64_REF_OUT);
+             bool reverseIn    = CRC64_REV_IN,
+             bool reverseOut   = CRC64_REV_OUT);
 
   void restart();
   uint64_t calc() const;

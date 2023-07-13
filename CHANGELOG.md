@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - added headers in src
 - bumped version number
 - update readme.md
+- replaced ..._REF_IN ==> ..._REV_IN (OUT iden)
 
 
 ## [1.0.0] - 2023-05-19
