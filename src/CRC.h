@@ -2,7 +2,7 @@
 //
 //    FILE: CRC.h
 //  AUTHOR: Rob Tillaart
-// VERSION: 1.0.0
+// VERSION: 1.0.1
 // PURPOSE: Arduino library for CRC8, CRC12, CRC16, CRC32, CRC64
 //     URL: https://github.com/RobTillaart/CRC
 //
@@ -14,7 +14,8 @@
 #include "CRC32.h"
 #include "CRC64.h"
 
-#define CRC_LIB_VERSION       (F("1.0.0"))
+#define CRC_LIB_VERSION       (F("1.0.1"))
+
 
 uint8_t calcCRC8(
     const uint8_t *array, crc_size_t length,
