@@ -18,7 +18,7 @@ void setup()
   Serial.println();
   Serial.println(__FILE__);
   Serial.print("CRC_LIB_VERSION: ");
-  Serial.println(CRC_LIB_VERSION);
+  //  Serial.println(CRC_LIB_VERSION);
   Serial.println();
 
   //  Serial.println("Verified with - http://zorc.breitbandkatze.de/crc.html \n");

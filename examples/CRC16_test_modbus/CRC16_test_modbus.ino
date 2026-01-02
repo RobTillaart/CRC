@@ -19,7 +19,7 @@ void setup()
   Serial.println();
   Serial.println(__FILE__);
   Serial.print("CRC_LIB_VERSION: ");
-  Serial.println(CRC_LIB_VERSION);
+  //  Serial.println(CRC_LIB_VERSION);
   Serial.println();
 
   //  uint8_t arr[12] = { 0xFE, 0x03, 0x14, 0x00, 0x01, 0x00, 0x55, 0xA5 };
